@@ -112,6 +112,7 @@ in
         withVencord = true;
       })
       obsidian
+      jellyfin-desktop
     ];
     programs.bash.enable = true;
 

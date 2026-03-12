@@ -28,6 +28,8 @@ in
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
 

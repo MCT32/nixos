@@ -56,8 +56,9 @@ in
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "au";
+    layout = "au,de";
     variant = "";
+    options = "grp:alt_shift_toggle";
   };
 
   # Enable CUPS to print documents.

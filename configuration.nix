@@ -86,38 +86,17 @@ in
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.sethh = {
-  #   isNormalUser = true;
-  #   description = "Seth Henderson";
-  #   extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
-  #   packages = with pkgs; [
-  #     kdePackages.kate
-  #   #  thunderbird
-  #     (discord.override {
-  #       withVencord = true;
-  #     })
-  #     obsidian
-  #   ];
-  # };
   users.users.sethh = {
     isNormalUser = true;
     description = "Seth Henderson";
     extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+    initialPassword = "test";
   };
-  home-manager.users.sethh = { pkgs, ... }: {
-    nixpkgs.config.allowUnfree = true;
-    home.packages = with pkgs; [
-      kdePackages.kate
-      (discord.override {
-        withVencord = true;
-      })
-      obsidian
-      jellyfin-desktop
-    ];
-    programs.bash.enable = true;
 
-    home.stateVersion = "25.11";
-  };
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.sethh = import ./home.nix;
 
   # Install firefox.
   programs.firefox.enable = true;

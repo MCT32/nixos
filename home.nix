@@ -24,6 +24,10 @@
 
   programs.kitty = {
     enable = true;
+
+    settings = {
+      background_opacity = "0.5";
+    };
   };
 
   programs.yazi = {
@@ -40,10 +44,12 @@
     settings = {
       splash = true;
 
+      preload = [
+        "~/Pictures/Wallpapers/cathedral.png"
+      ];
+
       wallpaper = [
-        {
-          path = "/usr/share/wallpapers/cathedral.png";
-        }
+        ",~/Pictures/Wallpapers/cathedral.png"
       ];
     };
   };
@@ -54,6 +60,13 @@
     systemd.enable = true;
 
     settings = {
+      general = {
+        gaps_in = 5;
+        gaps_out = 5;
+
+        border_size = 1;
+      };
+
       "$mod" = "SUPER";
 
       "$terminal" = "kitty";

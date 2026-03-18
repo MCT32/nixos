@@ -4,6 +4,8 @@
   home.username = "sethh";
   home.homeDirectory = "/home/sethh";
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     kdePackages.kate
     (discord.override {
@@ -11,6 +13,7 @@
     })
     obsidian
     jellyfin-desktop
+    nerd-fonts.jetbrains-mono
   ];
   programs.bash.enable = true;
 

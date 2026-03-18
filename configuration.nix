@@ -19,14 +19,32 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless = {
+    enable = true;  # Enables wireless support via wpa_supplicant.
+
+    secretsFile = "/etc/nixos/wireless.conf";
+
+    networks.DsquariusGreenJr = {
+      psk = "11111111";
+    };
+
+    networks.eduroam = {
+      auth = ''
+        key_mgmt=WPA-EAP
+        eap=PEAP
+
+        identity="105751853@swin.edu.au"
+        password="o4uKc5XM9!LoetbJ6y3Ruznl66oxq"
+      '';
+    };
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
 
   hardware.bluetooth.enable = true;
 
@@ -133,7 +151,7 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

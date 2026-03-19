@@ -18,10 +18,10 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        NixosLaptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system; };
           modules = [
-            ./configuration.nix
+            ./hosts/NixosLaptop/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

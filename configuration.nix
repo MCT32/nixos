@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./wireless.nix
     ];
 
   # Bootloader.
@@ -15,39 +16,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless = {
-    enable = true;  # Enables wireless support via wpa_supplicant.
-
-    secretsFile = "/etc/nixos/wireless.conf";
-
-    networks.DsquariusGreenJr = {
-      priority = 1;
-      psk = "11111111";
-    };
-
-    networks.eduroam = {
-      priority = 2;
-      auth = ''
-        key_mgmt=WPA-EAP
-        eap=PEAP
-
-        identity="105751853@swin.edu.au"
-        password="o4uKc5XM9!LoetbJ6y3Ruznl66oxq"
-      '';
-    };
-
-    networks."TP-Link_41BC" = {
-      priority = 2;
-      psk = "94969740";
-    };
-  };
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = false;
 
   hardware.bluetooth.enable = true;
 

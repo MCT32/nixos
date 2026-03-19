@@ -6,6 +6,11 @@
 
   fonts.fontconfig.enable = true;
 
+  stylix.targets.vencord = {
+    enable = true;
+    colors.enable = true;
+  };
+
   home.packages = with pkgs; [
     kdePackages.kate
     (discord.override {
@@ -24,10 +29,6 @@
 
   programs.kitty = {
     enable = true;
-
-    settings = {
-      background_opacity = "0.5";
-    };
   };
 
   programs.yazi = {

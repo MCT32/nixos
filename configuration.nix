@@ -4,17 +4,10 @@
 
 { config, pkgs, ... }:
 
-let
-  home-manager = builtins.fetchTarball {
-    url = "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
-    sha256 = "05hpf3jwwkqlnp1idcynlx0j6bv6ghm99q09fdc44gx0p1k6pj53";
-  };
-in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
     ];
 
   # Bootloader.
@@ -127,11 +120,6 @@ in
     initialPassword = "test";
   };
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.sethh = import ./home.nix;
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -167,6 +155,11 @@ in
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

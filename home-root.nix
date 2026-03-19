@@ -1,14 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./nixosModules/vim.nix
-  ];
+	imports = [
+		./nixosModules/vim.nix
+	];
 
-  home.username = "root";
-  home.homeDirectory = "/root";
+	home.username = "root";
+	home.homeDirectory = "/root";
 
-  programs.bash.enable = true;
+	programs.bash.enable = true;
 
-  home.stateVersion = "25.11";
+	home.stateVersion = "25.11";
 }

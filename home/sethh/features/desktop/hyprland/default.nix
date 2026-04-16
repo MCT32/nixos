@@ -5,6 +5,7 @@
   imports = [
     ../common
 
+    ./hyprlock.nix
     ./hyprpaper.nix
     ./mako.nix
     ./waybar.nix

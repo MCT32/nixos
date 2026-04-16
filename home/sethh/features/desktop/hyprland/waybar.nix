@@ -12,7 +12,7 @@
 #       ];
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "mpd" "network" "battery" "clock" "tray" ];
+        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "clock" "tray" ];
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "{ipaddr}/{cidr}";

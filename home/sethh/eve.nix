@@ -1,0 +1,18 @@
+{
+  imports = [
+    ./global
+    ./features/desktop/hyprland
+    ./features/productivity
+  ];
+
+  monitors = [
+    {
+      name = "eDP-1";
+      width = 2736;
+      height = 1824;
+      scale = 2.0;
+      workspace = "1";
+      primary = true;
+    }
+  ];
+}

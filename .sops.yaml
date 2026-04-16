@@ -1,0 +1,20 @@
+keys:
+  - &hosts:
+    - &eve age1wd8lwhkalu8pl4wn3hkcadlk96tlnx3y4fq6tx7ph40xsaj60yxqga6dn7
+    - &sentinel age1ymzy26xuh4m97fk6nu0fz6v03j9xcvfxsw80ex0tl7gnkcw6k3hq0mg8q5
+creation_rules:
+  - path_regex: hosts/eve/secrets.yaml$
+    key_groups:
+    - age:
+      - *eve
+
+  - path_regex: hosts/sentinel/secrets.yaml$
+    key_groups:
+    - age:
+      - *sentinel
+
+  - path_regex: hosts/common/secrets.yaml$
+    key_groups:
+    - age:
+      - *eve
+      - *sentinel

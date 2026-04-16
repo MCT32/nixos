@@ -1,6 +1,7 @@
 {
   imports = [
     ./global
+    ./features/cli/wireless
     ./features/desktop/hyprland
     ./features/productivity
   ];

@@ -10,7 +10,6 @@
     ./locale.nix
     ./sops.nix
     ./tailscale.nix
-    ./vim.nix
   ]
   ++ (builtins.attrValues outputs.nixosModules);
 

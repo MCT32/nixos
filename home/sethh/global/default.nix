@@ -12,20 +12,45 @@
   home.username = "sethh";
   home.homeDirectory = "/home/sethh";
 
-  fonts.fontconfig.enable = true;
-
-  stylix.targets.vencord = {
+  stylix = {
     enable = true;
-    colors.enable = true;
+
+    fonts = {
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+
+      serif = config.stylix.fonts.sansSerif;
+
+      monospace = {
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font";
+      };
+
+      emoji = {
+        package = pkgs.twitter-color-emoji;
+        name = "Twitter Color Emoji";
+      };
+    };
+
+    targets = {
+      fontconfig.enable = true;
+
+      vencord = {
+        enable = true;
+        colors.enable = true;
+      };
+    };
   };
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
-    kdePackages.kate
     (discord.override {
       withVencord = true;
     })
     jellyfin-desktop
-    nerd-fonts.jetbrains-mono
     brightnessctl
   ];
 

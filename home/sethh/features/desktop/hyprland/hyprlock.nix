@@ -4,6 +4,8 @@
 
     settings = {
       auth.fingerprint.enabled = true;
+
+      general.hide_cursor = true;
     };
   };
 

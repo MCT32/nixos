@@ -13,10 +13,9 @@
     ../common/global
     ../common/users/sethh
 
+    ../common/optional/steam.nix
     ../common/optional/pipewire.nix
     ../common/optional/sunshine.nix
-
-    ../../modules/gaming.nix
   ];
 
   # Bootloader.

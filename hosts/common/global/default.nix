@@ -9,6 +9,7 @@
     inputs.stylix.nixosModules.stylix
     ./locale.nix
     ./sops.nix
+    ./stylix.nix
     ./tailscale.nix
   ]
   ++ (builtins.attrValues outputs.nixosModules);

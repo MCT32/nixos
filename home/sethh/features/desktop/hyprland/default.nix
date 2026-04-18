@@ -39,12 +39,16 @@
       ];
 
       windowrule= [
+        # Assigning workspaces
         "workspace name:discord, match:class ^(discord)$"
         "no_initial_focus on, match:class ^(discord)$"
         "workspace name:browser, match:class ^(org.qutebrowser.qutebrowser)$"
         "workspace name:steam, match:class ^(steam)$"
         "no_initial_focus on, match:class ^(steam)$"
         "workspace name:music, match:class ^(tidal-hifi)$"
+
+        # Make unfocused windows transparent
+        "match:focus false, opacity 0.5"
       ];
 
       bind = [
@@ -108,6 +112,10 @@
         then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${m.position},${toString m.scale}"
         else "disable"
       }") (config.monitors);
+
+      decoration = {
+        blur.passes = 3;
+      };
     };
   };
 }

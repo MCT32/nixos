@@ -1,5 +1,7 @@
 {
   config,
+  osConfig,
+  lib,
   ...
 }: {
   imports = [
@@ -34,8 +36,9 @@
         "waybar"
         "[workspace name:discord silent] discord"
         "[workspace name:browser silent] qutebrowser"
-        "[workspace name:steam silent] steam"
         "[workspace name:music silent] tidal-hifi"
+      ] ++ lib.optionals osConfig.programs.steam.enable [
+        "[workspace name:steam silent] steam"
       ];
 
       windowrule= [
@@ -43,12 +46,13 @@
         "workspace name:discord, match:class ^(discord)$"
         "no_initial_focus on, match:class ^(discord)$"
         "workspace name:browser, match:class ^(org.qutebrowser.qutebrowser)$"
-        "workspace name:steam, match:class ^(steam)$"
-        "no_initial_focus on, match:class ^(steam)$"
         "workspace name:music, match:class ^(tidal-hifi)$"
 
         # Make unfocused windows transparent
         "match:focus false, opacity 0.5"
+      ] ++ lib.optionals osConfig.programs.steam.enable [
+        "workspace name:steam, match:class ^(steam)$"
+        "no_initial_focus on, match:class ^(steam)$"
       ];
 
       bind = [
@@ -77,12 +81,12 @@
         "$mod SHIFT, D, movetoworkspace, name:discord"
         "$mod, A, workspace, name:browser"
         "$mod SHIFT, A, movetoworkspace, name:browser"
-        "$mod, S, workspace, name:steam"
-        "$mod SHIFT, S, movetoworkspace, name:steam"
         "$mod, T, workspace, name:music"
         "$mod SHIFT, T, movetoworkspace, name:music"
-      ]
-      ++ (
+      ] ++ lib.optionals osConfig.programs.steam.enable [
+        "$mod, S, workspace, name:steam"
+        "$mod SHIFT, S, movetoworkspace, name:steam"
+      ] ++ (
         builtins.concatLists (builtins.genList (i:
           let ws = i + 1;
           in [

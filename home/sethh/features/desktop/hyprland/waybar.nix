@@ -1,4 +1,8 @@
 {
+  osConfig,
+  lib,
+  ...
+}: {
   programs.waybar = {
     enable = true;
 
@@ -35,14 +39,16 @@
           format-icons = {
             "browser" = "󰖟";
             "discord" = "";
-            "steam" = "󰓓";
             "music" = "󰝚";
+          } // lib.optionalAttrs osConfig.programs.steam.enable {
+            "steam" = "󰓓";
           };
           persistent-workspaces = {
             "browser" = [];
             "discord" = [];
-            "steam" = [];
             "music" = [];
+          } // lib.optionalAttrs osConfig.programs.steam.enable {
+            "steam" = [];
           };
         };
       };

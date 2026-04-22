@@ -13,4 +13,7 @@
     #useRoutingFeatures = lib.mkDefault "client";
     authKeyFile = config.sops.secrets.tailscale-key.path;
   };
+
+  # Seems to be required to fix DNS issues
+  services.resolved.enable = true;
 }

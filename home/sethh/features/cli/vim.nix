@@ -6,7 +6,10 @@
     enable = true;
     defaultEditor = true;
 
-    plugins = with pkgs.vimPlugins; [ vim-airline ];
+    plugins = with pkgs.vimPlugins; [
+      vim-airline
+      vim-commentary
+    ];
 
     settings = {
       number = true;

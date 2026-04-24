@@ -3,6 +3,8 @@
   ...
 }: {
   imports = [
+    ./fish
+
     ./bat.nix
     ./btop.nix
     ./vim.nix

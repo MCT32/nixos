@@ -7,6 +7,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
+    ./fish.nix
     ./locale.nix
     ./sops.nix
     ./stylix.nix

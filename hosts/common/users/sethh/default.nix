@@ -17,6 +17,8 @@ in {
       "wheel"
     ];
 
+    shell = pkgs.fish;
+
     hashedPasswordFile = config.sops.secrets.sethh-password.path;
 
     packages = with pkgs; [

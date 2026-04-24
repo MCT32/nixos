@@ -13,6 +13,7 @@
     ../common/global
     ../common/users/sethh
 
+    ../common/optional/docker.nix
     ../common/optional/steam.nix
     ../common/optional/pipewire.nix
     ../common/optional/sunshine.nix

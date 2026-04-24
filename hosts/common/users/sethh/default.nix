@@ -11,6 +11,7 @@ in {
     isNormalUser = true;
     # shell = pkgs.fish;
     extraGroups = ifTheyExist [
+      "docker"
       "scanner"
       "wpa_supplicant"
       "wheel"

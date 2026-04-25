@@ -47,9 +47,6 @@
         "no_initial_focus on, match:class ^(discord)$"
         "workspace name:browser, match:class ^(org.qutebrowser.qutebrowser)$"
         "workspace name:music, match:class ^(tidal-hifi)$"
-
-        # Make unfocused windows transparent
-        "match:focus false, opacity 0.5"
       ] ++ lib.optionals osConfig.programs.steam.enable [
         "workspace name:steam, match:class ^(steam)$"
         "no_initial_focus on, match:class ^(steam)$"

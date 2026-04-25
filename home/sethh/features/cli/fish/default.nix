@@ -1,5 +1,6 @@
 {
   imports = [
+    ./tide.nix
     ./zoxide.nix
   ];
 

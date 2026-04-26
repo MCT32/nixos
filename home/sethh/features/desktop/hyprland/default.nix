@@ -10,6 +10,7 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     ./mako.nix
+    ./screenshot.nix
     ./waybar.nix
   ];
 

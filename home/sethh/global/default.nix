@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   outputs,
   ...
 }: {
@@ -13,9 +14,6 @@
   home.homeDirectory = "/home/sethh";
 
   home.packages = with pkgs; [
-    (discord.override {
-      withVencord = true;
-    })
     jellyfin-desktop
     brightnessctl
   ];

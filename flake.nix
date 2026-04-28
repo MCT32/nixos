@@ -25,6 +25,9 @@
       url = "github:nix-community/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nixcord
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs = {

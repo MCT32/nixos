@@ -3,6 +3,7 @@
     ./global
     ./features/cli/wireless
     ./features/desktop/hyprland
+    ./features/gaming/retroarch
     ./features/pass
     ./features/productivity
   ];

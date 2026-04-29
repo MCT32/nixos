@@ -13,6 +13,8 @@
   home.username = "sethh";
   home.homeDirectory = "/home/sethh";
 
+  sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
+
   home.packages = with pkgs; [
     jellyfin-desktop
     brightnessctl

@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   osConfig,
   ...
@@ -30,4 +31,11 @@
       };
     };
   };
+
+  # PS2 memory cards
+  systemd.user.tmpfiles.rules = 
+    lib.mkIf config.programs.retroarch.enable
+      [
+        "L ${config.home.homeDirectory}/.config/retroarch/system/pcsx2/memcards - - - - ${config.home.homeDirectory}/Games/Memcards"
+      ];
 }

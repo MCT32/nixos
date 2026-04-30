@@ -24,7 +24,7 @@
           enable = osConfig.networking.hostName == "eve"
             || osConfig.networking.hostName == "sentinel";
 
-          path = "~/Documents/Games";
+          path = "~/Games";
           devices = [ "eve" "sentinel" ];
         };
       };

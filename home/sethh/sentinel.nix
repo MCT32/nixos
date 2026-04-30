@@ -5,6 +5,7 @@
     ./features/gaming
     ./features/pass
     ./features/productivity
+    ./features/syncthing
   ];
 
   monitors = [

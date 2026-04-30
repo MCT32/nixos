@@ -6,6 +6,7 @@
     ./features/gaming/retroarch
     ./features/pass
     ./features/productivity
+    ./features/syncthing
   ];
 
   monitors = [

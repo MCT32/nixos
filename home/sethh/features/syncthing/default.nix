@@ -1,5 +1,6 @@
 {
   config,
+  osConfig,
   ...
 }: {
   services.syncthing = {
@@ -16,6 +17,13 @@
           path = "~/Documents/DailyNotes";
           # For globally shared folders
           devices = builtins.attrNames config.services.syncthing.settings.devices;
+        };
+
+        "Games" = {
+          enable = osConfig.networking.hostName == "eve";
+
+          path = "~/Documents/Games";
+          devices = [ "eve" ];
         };
       };
     };

@@ -25,6 +25,9 @@
       cheevos_enable = "true";
       cheevos_username = "MCT32";
       cheevos_unlock_sound_enable = "true";
+
+      # Saves
+      savefile_directory = "~/Games/Saves";
     };
   };
 

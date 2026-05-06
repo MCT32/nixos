@@ -9,6 +9,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-airline
       vim-commentary
+      vim-teal
     ];
 
     settings = {

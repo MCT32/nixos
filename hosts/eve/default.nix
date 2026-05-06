@@ -13,6 +13,7 @@
     ../common/global
     ../common/users/sethh
 
+    ../common/optional/localsend.nix
     ../common/optional/pipewire.nix
     ../common/optional/wireless.nix
   ];

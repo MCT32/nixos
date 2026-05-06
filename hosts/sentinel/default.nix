@@ -15,6 +15,7 @@
 
     ../common/optional/docker.nix
     ../common/optional/steam.nix
+    ../common/optional/localsend.nix
     ../common/optional/pipewire.nix
     ../common/optional/sunshine.nix
     ../common/optional/virtualbox.nix

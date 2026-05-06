@@ -28,6 +28,11 @@
           path = "~/Games";
           devices = [ "eve" "sentinel" ];
         };
+
+        "KeepassXC" = {
+          path = "~/KeepassXC";
+          devices = builtins.attrNames config.services.syncthing.settings.devices;
+        };
       };
     };
   };

@@ -4,6 +4,7 @@
     ./features/cli/wireless
     ./features/desktop/hyprland
     ./features/gaming/retroarch
+    ./features/keepassxc
     ./features/pass
     ./features/productivity
     ./features/syncthing

@@ -17,6 +17,8 @@
     ../common/optional/steam.nix
     ../common/optional/pipewire.nix
     ../common/optional/sunshine.nix
+    ../common/optional/virtualbox.nix
+    ../common/optional/vmware.nix
   ];
 
   # Bootloader.

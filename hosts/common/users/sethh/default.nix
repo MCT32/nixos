@@ -13,6 +13,7 @@ in {
     extraGroups = ifTheyExist [
       "docker"
       "scanner"
+      "vboxusers"
       "wpa_supplicant"
       "wheel"
     ];

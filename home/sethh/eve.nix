@@ -3,8 +3,8 @@
     ./global
     ./features/cli/wireless
     ./features/desktop/hyprland
+    ./features/desktop/keepassxc
     ./features/gaming/retroarch
-    ./features/keepassxc
     ./features/pass
     ./features/productivity
     ./features/syncthing

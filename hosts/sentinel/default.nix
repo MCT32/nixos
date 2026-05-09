@@ -20,6 +20,7 @@
     ../common/optional/sunshine.nix
     ../common/optional/virtualbox.nix
     ../common/optional/vmware.nix
+    ../common/optional/vr.nix
   ];
 
   # Bootloader.
@@ -66,17 +67,6 @@
 
   programs.noisetorch.enable = true;
 
-  services.wivrn = {
-    enable = true;
-    openFirewall = true;
-
-    defaultRuntime = true;
-
-    autoStart = true;
-
-    package = (pkgs.wivrn.override { cudaSupport = true; });
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -91,6 +81,9 @@
     substituters = [ "https://cache.nixos-cuda.org" ];
     trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
   };
+
+  # CUDA support
+  nixpkgs.config.cudaSupport = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

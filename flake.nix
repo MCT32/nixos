@@ -28,10 +28,6 @@
 
     # Nixcord
     nixcord.url = "github:FlameFlag/nixcord";
-
-    # TODO: Actually use the package
-    # Statlocker match uploader for deadlock
-    deadlock-ingest.url = "github:deadlock-api/deadlock-api-ingest";
   };
 
   outputs = {
@@ -41,7 +37,6 @@
     stylix,
     systems,
     ...
-  # TODO: Learn what this syntax is actually doing
   } @ inputs: let
     inherit (self) outputs;
 
@@ -69,7 +64,6 @@
         sentinel = lib.nixosSystem {
           modules = [./hosts/sentinel];
           specialArgs = {
-            # TODO: Learn the purpose of this line
             inherit inputs outputs;
           };
         };

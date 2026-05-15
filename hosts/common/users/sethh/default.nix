@@ -12,6 +12,7 @@ in {
     # shell = pkgs.fish;
     extraGroups = ifTheyExist [
       "docker"
+      "libvirtd"
       "scanner"
       "vboxusers"
       "wpa_supplicant"

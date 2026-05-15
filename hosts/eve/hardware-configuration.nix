@@ -5,6 +5,7 @@
 
 {
   imports =
+    # FIXME: What does this do?
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
@@ -13,6 +14,7 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
+  # TODO: Use disko
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f10b4da3-1e08-468f-84b3-a8d24ebc63f8";
       fsType = "ext4";

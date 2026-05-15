@@ -15,6 +15,7 @@
           image-path = "desktop.png";
         }
         {
+          # FIXME: Only switches existing steam to big picture, does not switch to it or make fullscreen
           name = "Steam Big Picture";
           detached = [
             "sudo -u sethh setsid steam steam://open/bigpicture"

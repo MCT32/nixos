@@ -6,7 +6,7 @@
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  users.mutableUsers = false;
+  users.mutableUsers = false; # FIXME: Should this be here or in global config?
   users.users.sethh = {
     isNormalUser = true;
     # shell = pkgs.fish;
@@ -19,12 +19,12 @@ in {
       "wheel"
     ];
 
-    shell = pkgs.fish;
+    shell = pkgs.fish;  # FIXME: Does this mean i dont need to include the package elsewhere?
 
     hashedPasswordFile = config.sops.secrets.sethh-password.path;
 
     packages = with pkgs; [
-      home-manager
+      home-manager  # FIXME: Is this required?
     ];
   };
 

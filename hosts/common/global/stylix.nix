@@ -6,6 +6,7 @@
   stylix = {
     enable = true;
 
+    # TODO: Make machine specifiy themes and wallpapers
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
     opacity.terminal = 0.7;

@@ -1,5 +1,6 @@
 { lib, ... }: {
   i18n = {
+    # TODO: Maker german default, for learning
     defaultLocale = lib.mkDefault "en_AU.UTF-8";
 
     supportedLocales = lib.mkDefault [

@@ -5,6 +5,8 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
+      # TODO: Prune unnecessary libs, or add ryubing unstable to flake
+      # Ryujinx
       icu
       libGL
       fontconfig

@@ -2,6 +2,7 @@
   pkgs,
   ...
 }: {
+  # TODO: Maybe use vr nix overlay
   services.wivrn = {
     enable = true;
     openFirewall = true;

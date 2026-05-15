@@ -67,6 +67,7 @@
   # Scanning
   hardware.sane.enable = true;
 
+  # Move to an optional, enable as a service
   programs.noisetorch.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).

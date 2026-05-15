@@ -16,8 +16,9 @@
   ++ (builtins.attrValues outputs.nixosModules);
 
   # Home manager global stuff
-  home-manager.useGlobalPkgs = true;
+  home-manager.useGlobalPkgs = true;  # TODO: What about user packages?
   home-manager.extraSpecialArgs = {
+    # TODO: What does this do
     inherit inputs outputs;
   };
 
@@ -32,6 +33,7 @@
   };
 
   # Cloudflare DNS
+  # FIXME: This is not actually used
   networking.nameservers = [
     "1.1.1.1"
     "1.0.0.1"

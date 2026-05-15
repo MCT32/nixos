@@ -33,6 +33,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {
+    # TODO: Switch away from sddm, maybe make this an optional
     sddm = {
       enable = true;
       wayland.enable = true;
@@ -49,21 +50,25 @@
   # };
 
   # Enable CUPS to print documents.
+  # TODO: Maybe make this global/optional
   services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # TODO: Make an optional
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
   };
 
+  # TODO: Make global
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # TODO: Make global
   environment.systemPackages = with pkgs; [
     git
   #  wget
@@ -80,6 +85,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
+  # TODO: Make global
   services.openssh.enable = true;
 
   # Open ports in the firewall.
@@ -94,6 +100,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  # FIXME: Is this correct for unstable? Also update home-manager
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }

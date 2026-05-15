@@ -14,6 +14,7 @@ in {
       "docker"
       "libvirtd"
       "scanner"
+      "uinput"
       "vboxusers"
       "wpa_supplicant"
       "wheel"

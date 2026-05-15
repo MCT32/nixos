@@ -2,7 +2,7 @@
   services.sunshine = {
     enable = true;
     autoStart = true;
-    capSysAdmin = true;
+    capSysAdmin = true; # Needed for wayland
     openFirewall = true;
 
     applications = {
@@ -15,18 +15,9 @@
           image-path = "desktop.png";
         }
         {
-          # FIXME: Only switches existing steam to big picture, does not switch to it or make fullscreen
-          name = "Steam Big Picture";
-          detached = [
-            "sudo -u sethh setsid steam steam://open/bigpicture"
-          ];
-          prep-cmd = [
-            {
-              do = "";
-              undo = "sudo -u sethh setid steam steam://close/bigpicture";
-            }
-          ];
-          image-path = "steam.png";
+          name = "Retroarch";
+          cmd = "sudo -u sethh retroarch";
+          image-path = "desktop.png";
         }
       ];
     };

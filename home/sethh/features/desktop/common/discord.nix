@@ -13,6 +13,7 @@
     discord.equicord.enable = true;
 
     config = {
+      # TODO: Add more plugins
       plugins = {
         fakeNitro.enable = true;
       };

@@ -16,24 +16,28 @@
   sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
 
   home.packages = with pkgs; [
-    jellyfin-desktop
-    brightnessctl
+    jellyfin-desktop  # TODO: Move to a feature
+    brightnessctl     # TODO: Move to machine specific config
   ];
 
+  # TODO: Move
   programs.rofi = {
     enable = true;
   };
 
+  # TODO: Move
   programs.kitty = {
     enable = true;
 
     shellIntegration.enableFishIntegration = true;
   };
 
+  # TODO: Move
   programs.yazi = {
     enable = true;
     enableFishIntegration = false;
   };
 
+  # TODO: Update to unstable
   home.stateVersion = "25.11";
 }

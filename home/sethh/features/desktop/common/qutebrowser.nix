@@ -12,9 +12,14 @@
       gh = "https://github.com/search?q={}&type=repositories";
 
       yt = "https://www.youtube.com/results?search_query={}";
+
+      # TODO: Add duckduckgo
     };
 
+    # TODO: Add bookmarks
+
     settings = {
+      # TODO: Change to chrome linux for best compatibility
       # Required to log in to google
       content.headers.user_agent = "Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135";
     };

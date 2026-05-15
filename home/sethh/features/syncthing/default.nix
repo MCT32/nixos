@@ -37,7 +37,7 @@
     };
   };
 
-  # PS2 memory cards
+  # PS2 memory cards symlink
   systemd.user.tmpfiles.rules = 
     lib.mkIf config.programs.retroarch.enable
       [

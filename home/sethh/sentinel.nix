@@ -1,6 +1,7 @@
 {
   imports = [
     ./global
+
     ./features/desktop/hyprland
     ./features/desktop/keepassxc
     ./features/gaming

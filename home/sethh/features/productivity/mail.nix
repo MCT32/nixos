@@ -1,4 +1,5 @@
 {
+  # TODO: Add more accounts
   accounts.email = {
     maildirBasePath = "Mail";
     accounts.gmail = {
@@ -8,7 +9,7 @@
       primary = true;
       flavor = "gmail.com";
 
-      passwordCommand = "echo 'qijs lfrb sjcf gzbn'";
+      passwordCommand = ""; # TODO: Add key secret here
 
       mbsync = {
         enable = true;

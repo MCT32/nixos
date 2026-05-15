@@ -1,0 +1,27 @@
+{
+  pkgs,
+  ...
+}: {
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      icu
+      libGL
+      fontconfig
+      freetype
+      zlib
+      xorg.libX11
+      xorg.libXext
+      xorg.libXrandr
+      xorg.libXi
+      xorg.libXcursor
+      xorg.libXinerama
+      xorg.libXfixes
+      xorg.libICE
+      xorg.libSM
+      libpulseaudio
+      SDL2
+      vulkan-loader
+    ];
+  };
+}

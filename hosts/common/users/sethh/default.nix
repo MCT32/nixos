@@ -6,7 +6,6 @@
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  users.mutableUsers = false; # FIXME: Should this be here or in global config?
   users.users.sethh = {
     isNormalUser = true;
     # shell = pkgs.fish;

@@ -15,6 +15,8 @@
   ]
   ++ (builtins.attrValues outputs.nixosModules);
 
+  users.mutableUsers = false;
+
   # Home manager global stuff
   home-manager.useGlobalPkgs = true;  # TODO: What about user packages?
   home-manager.extraSpecialArgs = {

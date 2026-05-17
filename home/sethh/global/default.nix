@@ -38,6 +38,5 @@
     enableFishIntegration = false;
   };
 
-  # TODO: Update to unstable
   home.stateVersion = "25.11";
 }

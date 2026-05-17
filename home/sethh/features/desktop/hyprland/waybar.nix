@@ -14,6 +14,8 @@
 #       output = [
 #         "DP-1"
 #       ];
+        # TODO: Add pomodoro timer
+        # TODO: Add unread emails
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "wireplumber" "bluetooth" "network" "battery" "clock" "tray" ];

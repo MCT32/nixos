@@ -34,6 +34,9 @@
     };
   };
 
+  # Enable ssh
+  services.openssh.enable = true;
+
   # Cloudflare DNS
   # FIXME: This is not actually used
   networking.nameservers = [

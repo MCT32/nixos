@@ -12,15 +12,15 @@
       fontconfig
       freetype
       zlib
-      xorg.libX11
-      xorg.libXext
-      xorg.libXrandr
-      xorg.libXi
-      xorg.libXcursor
-      xorg.libXinerama
-      xorg.libXfixes
-      xorg.libICE
-      xorg.libSM
+      libx11
+      libxext
+      libxrandr
+      libxi
+      libxcursor
+      libxinerama
+      libxfixes
+      libice
+      libsm
       libpulseaudio
       SDL2
       vulkan-loader

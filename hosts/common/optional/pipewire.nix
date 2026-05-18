@@ -1,4 +1,7 @@
 {
+  pkgs,
+  ...
+}: {
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -8,4 +11,10 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  # Extra audio packages
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+    crosspipe
+  ];
 }

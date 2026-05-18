@@ -11,3 +11,6 @@ https://github.com/Misterio77/nix-config/tree/main
 ## Machines
 - **sentinel:** Desktop gaming PC
 - **eve:** Touchscreen laptop
+
+## Wallpaper
+Wallpaper by [@turniip.mp4](https://instagram.com/turniip.mp4)

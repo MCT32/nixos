@@ -9,6 +9,7 @@
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
     ./hardware-configuration.nix
+    ./audio.nix
 
     ../common/global
     ../common/users/sethh

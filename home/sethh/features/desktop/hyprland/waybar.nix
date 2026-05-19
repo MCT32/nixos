@@ -17,8 +17,8 @@
         # TODO: Add pomodoro timer
         # TODO: Add unread emails
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "clock" "tray" ];
+        modules-center = [ "clock" ];
+        modules-right = [ "cava" "wireplumber" "bluetooth" "network" "battery" "tray" ];
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "{ipaddr}/{cidr}";
@@ -53,7 +53,39 @@
             "steam" = [];
           };
         };
+        "cava" = {
+          method = "pipewire";
+          source = "auto";
+          bars = 14;
+          bar_delimiter = 0;
+          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        };
       };
     };
+
+    style = ''
+      window#waybar {
+        all:unset;
+      }
+
+      .modules-left {
+        background: alpha(@base00, 0.7);
+        margin: 15px 0px 0px 15px;
+      }
+
+      .modules-center {
+        background: alpha(@base00, 0.7);
+        margin: 15px 0px 0px 0px;
+      }
+
+      .modules-right {
+        background: alpha(@base00, 0.7);
+        margin: 15px 15px 0px 0px;
+      }
+    '';
+  };
+
+  stylix.targets.waybar = {
+    addCss = false;
   };
 }

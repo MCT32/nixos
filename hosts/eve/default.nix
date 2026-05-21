@@ -16,6 +16,7 @@
 
     ../common/optional/localsend.nix
     ../common/optional/pipewire.nix
+    ../common/optional/steam.nix
     ../common/optional/wireless.nix
   ];
 

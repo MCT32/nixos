@@ -64,6 +64,10 @@
     };
 
     style = ''
+      * {
+        color: @base05;
+      }
+
       window#waybar {
         all:unset;
       }
@@ -76,6 +80,7 @@
       .modules-center {
         background: alpha(@base00, 0.7);
         margin: 15px 0px 0px 0px;
+        padding: 0px 15px;
       }
 
       .modules-right {

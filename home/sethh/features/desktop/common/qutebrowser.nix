@@ -13,7 +13,8 @@
 
       yt = "https://www.youtube.com/results?search_query={}";
 
-      # TODO: Add duckduckgo
+      ddg = "https://duckduckgo.com/?q={}";
+      DEFAULT = "https://duckduckgo.com/?q={}";
     };
 
     # TODO: Add bookmarks

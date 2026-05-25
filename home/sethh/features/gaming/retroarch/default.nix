@@ -15,6 +15,7 @@
       mupen64plus.enable = true;
       nestopia.enable = true;
       pcsx2.enable = true;
+      prboom.enable = true;
     };
 
     settings = {

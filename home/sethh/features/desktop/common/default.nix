@@ -5,7 +5,7 @@
   # TODO: Make these not common
   imports = [
     ./discord.nix
-    ./qutebrowser.nix
+    ./qutebrowser
   ];
 
   # TODO: Make this not common

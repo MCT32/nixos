@@ -18,7 +18,29 @@
         # TODO: Add unread emails
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "clock" ];
-        modules-right = [ "cava" "wireplumber" "bluetooth" "network" "battery" "tray" ];
+        modules-right = [ "cava" "wireplumber" "bluetooth" "network" "battery" "tray" "group/system" ];
+
+        "group/system" = {
+          orientation = "horizontal";
+          drawer = {
+            transition-duration = 500;
+            transition-left-to-right = true;
+            click-to-reveal = true;
+          };
+          modules = [ "cpu" "memory" ];
+        };
+
+        # System info
+        cpu = {
+          interval = 10;
+          format = "{}% ";
+          max-length = 10;
+        };
+        memory = {
+          interval = 30;
+          format = "{used:0.1f}G/{total:0.1f}G ";
+        };
+
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "{ipaddr}/{cidr}";
@@ -66,6 +88,7 @@
     style = ''
       * {
         color: @base05;
+        font-weight: bold;
       }
 
       window#waybar {

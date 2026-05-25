@@ -20,6 +20,7 @@
     ../common/optional/localsend.nix
     ../common/optional/nix-ld.nix
     ../common/optional/pipewire.nix
+    ../common/optional/printing.nix
     ../common/optional/sunshine.nix
     ../common/optional/virt-manager.nix
     ../common/optional/virtualbox.nix
@@ -56,18 +57,6 @@
   #   variant = "";
   #   options = "grp:alt_shift_toggle";
   # };
-
-  # Enable CUPS to print documents.
-  services.printing = {
-    enable = true;
-
-    drivers = with pkgs; [
-      gutenprint
-    ];
-  };
-
-  # Scanning
-  hardware.sane.enable = true;
 
   # Move to an optional, enable as a service
   programs.noisetorch.enable = true;

@@ -16,6 +16,7 @@
 
     ../common/optional/localsend.nix
     ../common/optional/pipewire.nix
+    ../common/optional/printing.nix
     ../common/optional/steam.nix
     ../common/optional/wireless.nix
   ];
@@ -50,10 +51,6 @@
   #   variant = "";
   #   options = "grp:alt_shift_toggle";
   # };
-
-  # Enable CUPS to print documents.
-  # TODO: Maybe make this global/optional
-  services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

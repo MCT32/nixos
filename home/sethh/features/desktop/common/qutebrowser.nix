@@ -17,7 +17,13 @@
       DEFAULT = "https://duckduckgo.com/?q={}";
     };
 
-    # TODO: Add bookmarks
+    quickmarks = {
+      gh = "https://github.com";
+      yt = "https://youtube.com";
+
+      # Home server
+      home = "http://192.168.0.238/";
+    };
 
     settings = {
       # TODO: Change to chrome linux for best compatibility

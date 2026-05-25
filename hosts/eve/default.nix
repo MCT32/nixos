@@ -68,14 +68,6 @@
   # TODO: Make global
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  # TODO: Make global
-  environment.systemPackages = with pkgs; [
-    git
-  #  wget
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

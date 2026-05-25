@@ -7,6 +7,7 @@
 
     ./bat.nix
     ./btop.nix
+    ./git.nix
     ./vim.nix
   ];
 

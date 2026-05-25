@@ -15,6 +15,7 @@
     ../common/users/sethh
 
     ../common/optional/docker.nix
+    ../common/optional/flatpak.nix
     ../common/optional/steam.nix
     ../common/optional/localsend.nix
     ../common/optional/nix-ld.nix

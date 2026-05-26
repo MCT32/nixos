@@ -21,6 +21,12 @@
           devices = builtins.attrNames config.services.syncthing.settings.devices;
         };
 
+        "Toki Pona Lessons" = {
+          path = "~/Documents/Toki Pona Lessons";
+          # For globally shared folders
+          devices = builtins.attrNames config.services.syncthing.settings.devices;
+        };
+
         "Games" = {
           enable = osConfig.networking.hostName == "eve"
             || osConfig.networking.hostName == "sentinel";

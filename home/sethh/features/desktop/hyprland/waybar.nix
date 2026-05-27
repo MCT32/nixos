@@ -33,16 +33,16 @@
         # System info
         cpu = {
           interval = 10;
-          format = "{}% ";
+          format = "{}%  ";
           max-length = 10;
         };
         memory = {
           interval = 30;
-          format = "{used:0.1f}G/{total:0.1f}G ";
+          format = "{used:0.1f}G/{total:0.1f}G  ";
         };
 
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "{essid} ({signalStrength}%)  ";
           format-ethernet = "{ipaddr}/{cidr}";
           format-disconnected = "";
         };
@@ -52,7 +52,7 @@
             warning = 30;
             critical = 15;
           };
-          format = "{capacity}% {icon}";
+          format = "{capacity}% {icon} ";
           format-icons = {
             default = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
             charging = [ "󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
@@ -61,11 +61,11 @@
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
-            "browser" = "󰖟";
-            "discord" = "";
-            "music" = "󰝚";
+            "browser" = "󰖟 ";
+            "discord" = " ";
+            "music" = "󰝚 ";
           } // lib.optionalAttrs osConfig.programs.steam.enable {
-            "steam" = "󰓓";
+            "steam" = "󰓓 ";
           };
           persistent-workspaces = {
             "browser" = [];
@@ -88,6 +88,7 @@
     style = ''
       * {
         color: @base05;
+        font-family: "FiraCode", "Symbols Nerd Font", monospace;
         font-weight: bold;
       }
 

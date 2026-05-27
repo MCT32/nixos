@@ -10,7 +10,7 @@
       mainBar = {
         layer = "bottom";
         position = "top";
-        height = 30;
+        height = 50;
 #       output = [
 #         "DP-1"
 #       ];

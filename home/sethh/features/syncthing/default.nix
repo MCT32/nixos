@@ -35,6 +35,14 @@
           devices = [ "eve" "sentinel" ];
         };
 
+        "Projects" = {
+          enable = osConfig.networking.hostName == "eve"
+            || osConfig.networking.hostName == "sentinel";
+
+          path = "~/Projects";
+          devices = [ "eve" "sentinel" ];
+        };
+
         "KeepassXC" = {
           path = "~/KeepassXC";
           devices = builtins.attrNames config.services.syncthing.settings.devices;

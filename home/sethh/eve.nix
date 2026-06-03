@@ -2,6 +2,7 @@
   imports = [
     ./global
 
+    ./features/art
     ./features/cli/wireless
     ./features/desktop/hyprland
     ./features/desktop/keepassxc

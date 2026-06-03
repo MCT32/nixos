@@ -34,6 +34,10 @@
     };
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "fspy-1.0.3"
+  ];
+
   # Enable ssh
   services.openssh.enable = true;
 

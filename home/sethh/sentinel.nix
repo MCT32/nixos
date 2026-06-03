@@ -2,6 +2,7 @@
   imports = [
     ./global
 
+    ./features/art
     ./features/desktop/hyprland
     ./features/desktop/keepassxc
     ./features/gaming

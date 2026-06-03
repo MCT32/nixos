@@ -26,6 +26,7 @@
     ../common/optional/virtualbox.nix
     ../common/optional/vmware.nix
     ../common/optional/vr.nix
+    ../common/optional/waydroid.nix
   ];
 
   # Bootloader.

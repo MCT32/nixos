@@ -38,4 +38,8 @@
   };
 
   fonts.fontconfig.enable = true;
+
+  fonts.packages = with pkgs; [
+    nasin-nanpa-ucsur
+  ];
 }

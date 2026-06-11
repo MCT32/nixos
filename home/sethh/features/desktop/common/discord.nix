@@ -9,8 +9,11 @@
   programs.nixcord = {
     enable = true;
 
-    discord.vencord.enable = false;
-    discord.equicord.enable = true;
+    discord = {
+      vencord.enable = false;
+      equicord.enable = true;
+      krisp.enable = true;
+    };
 
     config = {
       # TODO: Add more plugins

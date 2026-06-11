@@ -41,5 +41,6 @@
 
   fonts.packages = with pkgs; [
     nasin-nanpa-ucsur
+    nasin-nanpa-helvetica
   ];
 }

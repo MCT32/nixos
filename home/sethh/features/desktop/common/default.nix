@@ -10,6 +10,7 @@
 
   # TODO: Make this not common
   home.packages = with pkgs; [
+    jetbrains.idea-oss
     tidal-hifi
   ];
 }

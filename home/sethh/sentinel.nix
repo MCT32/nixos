@@ -9,6 +9,7 @@
     ./features/pass
     ./features/productivity
     ./features/syncthing
+    ./features/udiskie
   ];
 
   monitors = [

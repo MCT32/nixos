@@ -17,6 +17,8 @@
 
   users.mutableUsers = false;
 
+  services.udisks2.enable = true;
+
   # Home manager global stuff
   home-manager.useGlobalPkgs = true;  # TODO: What about user packages?
   home-manager.extraSpecialArgs = {

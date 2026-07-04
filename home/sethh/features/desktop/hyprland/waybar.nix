@@ -18,7 +18,12 @@
         # TODO: Add unread emails
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "clock" ];
-        modules-right = [ "cava" "wireplumber" "bluetooth" "network" "battery" "tray" "group/system" ];
+        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "tray" "group/system" ];
+
+        # -- LEFT SIDE --
+        clock = {
+          format = "{:%H:%M %a %d %b}";
+        };
 
         "group/system" = {
           orientation = "horizontal";
@@ -27,7 +32,11 @@
             transition-left-to-right = true;
             click-to-reveal = true;
           };
-          modules = [ "cpu" "memory" ];
+          modules = [ "custom/system-arrow" "cpu" "memory" "disk" ];
+        };
+
+        "custom/system-arrow" = {
+          format = "󰍹 ";
         };
 
         # System info
@@ -75,13 +84,6 @@
             "steam" = [];
           };
         };
-        "cava" = {
-          method = "pipewire";
-          source = "auto";
-          bars = 14;
-          bar_delimiter = 0;
-          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-        };
       };
     };
 
@@ -97,19 +99,30 @@
       }
 
       .modules-left {
-        background: alpha(@base00, 0.7);
         margin: 15px 0px 0px 15px;
       }
 
       .modules-center {
-        background: alpha(@base00, 0.7);
         margin: 15px 0px 0px 0px;
         padding: 0px 15px;
       }
 
       .modules-right {
-        background: alpha(@base00, 0.7);
         margin: 15px 15px 0px 0px;
+      }
+
+      #workspaces {
+        background: @base00;
+      }
+
+      #clock {
+        background: @base00;
+        padding: 0px 15px;
+      }
+
+      #system {
+        background: @base00;
+        padding: 0px 15px;
       }
     '';
   };

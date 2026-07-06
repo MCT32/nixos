@@ -12,6 +12,7 @@
 
     cores = {
       beetle-psx-hw.enable = true;
+      flycast.enable = true;
       mupen64plus.enable = true;
       nestopia.enable = true;
       pcsx2.enable = true;

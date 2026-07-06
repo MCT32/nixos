@@ -26,6 +26,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    slimevr
     xrizer
   #   wayvr
   ];

@@ -5,6 +5,7 @@
     ./features/art
     ./features/desktop/hyprland
     ./features/desktop/keepassxc
+    ./features/dev
     ./features/gaming
     ./features/pass
     ./features/productivity

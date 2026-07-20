@@ -10,6 +10,7 @@ in {
     isNormalUser = true;
     # shell = pkgs.fish;
     extraGroups = ifTheyExist [
+      "dialout"
       "docker"
       "libvirtd"
       "scanner"
@@ -27,6 +28,9 @@ in {
       home-manager  # FIXME: Is this required?
     ];
   };
+
+  # Ensure dialout exists
+  users.groups.dialout = {};
 
   sops.secrets.sethh-password = {
     sopsFile = ../../secrets.yaml;

@@ -16,5 +16,6 @@
     fastfetch
     ncdu # Disk usage TUI
     tree
+    unzip
   ];
 }

@@ -35,6 +35,14 @@
           devices = [ "eve" "sentinel" ];
         };
 
+        "Uni" = {
+          enable = osConfig.networking.hostName == "eve"
+            || osConfig.networking.hostName == "sentinel";
+
+          path = "~/Uni";
+          devices = [ "eve" "sentinel" ];
+        };
+
         "Projects" = {
           enable = osConfig.networking.hostName == "eve"
             || osConfig.networking.hostName == "sentinel";

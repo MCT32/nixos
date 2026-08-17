@@ -2,7 +2,7 @@
   # TODO: Add more accounts
   accounts.email = {
     maildirBasePath = "Mail";
-    accounts.gmail = {
+    accounts."ivanhen99@gmail.com" = {
       enable = true;
       address = "ivanhen99@gmail.com";
       userName =  "ivanhen99@gmail.com";

@@ -24,6 +24,21 @@
 
       thunderbird.enable = true;
     };
+    accounts."105751853@student.swin.edu.au" = {
+      enable = true;
+      address = "105751853@student.swin.edu.au";
+      userName = "105751853@student.swin.edu.au";
+      realName = "Seth Henderson";
+      flavor = "outlook.office365.com";
+
+      imap = {
+        host = "outlook.office365.com";
+        port = 993;
+        tls.enable = true;
+      };
+
+      thunderbird.enable = true;
+    };
   };
 
   programs.mbsync.enable = true;

@@ -22,7 +22,20 @@
         tls.enable = true;
       };
 
-      thunderbird.enable = true;
+      thunderbird = {
+        enable = true;
+
+        messageFilters = [
+          {
+            name = "sin kulupu to folder";
+            enabled = true;
+            condition = "AND (to,is,sin-kulupu@googlegroups.com)";
+            action = "Move to folder";
+            actionValue = "imap://ivanhen99%40gmail.com@imap.gmail.com/sin kulupu";
+            type = "17";
+          }
+        ];
+      };
     };
     accounts."105751853@student.swin.edu.au" = {
       enable = true;

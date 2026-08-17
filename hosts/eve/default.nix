@@ -18,6 +18,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/steam.nix
+    ../common/optional/virtualbox.nix
     ../common/optional/wireless.nix
   ];
 

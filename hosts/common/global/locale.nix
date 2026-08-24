@@ -31,8 +31,7 @@
       fcitx5.waylandFrontend = true;
     };
 
-    # TODO: Maker german default, for learning
-    defaultLocale = lib.mkDefault "en_AU.UTF-8";
+    defaultLocale = lib.mkDefault "de_DE.UTF-8";
 
     supportedLocales = lib.mkDefault [
       "en_AU.UTF-8/UTF-8"

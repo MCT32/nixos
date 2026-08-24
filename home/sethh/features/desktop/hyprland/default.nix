@@ -58,6 +58,7 @@
         disabled = !m.enabled;
       }) (config.monitors);
 
+      # TODO: Consider experimenting with submaps
       bind = map
         (
           {

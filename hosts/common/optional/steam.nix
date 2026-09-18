@@ -5,7 +5,7 @@
     enable = true;
 
     # TODO: Consider opening remotePlay
-#   remotePlay.openFirewall = true;
+    remotePlay.openFirewall = true;
 #   dedicatedServer.openFirewall = true;
 
     protontricks.enable = true;

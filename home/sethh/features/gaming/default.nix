@@ -8,5 +8,7 @@
 
   home.packages = with pkgs; [
     prismlauncher
+    wheelwizard
+    dolphin-emu
   ];
 }

@@ -22,6 +22,8 @@
       libice
       libsm
       libpulseaudio
+      libusb1
+      hidapi
       SDL2
       vulkan-loader
     ];

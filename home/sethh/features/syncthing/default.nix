@@ -28,11 +28,10 @@
         };
 
         "Games" = {
-          enable = osConfig.networking.hostName == "eve"
-            || osConfig.networking.hostName == "sentinel";
+          enable = osConfig.networking.hostName == "sentinel";
 
           path = "~/Games";
-          devices = [ "eve" "sentinel" ];
+          devices = [ "sentinel" ];
         };
 
         "Uni" = {

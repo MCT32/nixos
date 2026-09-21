@@ -18,36 +18,11 @@
         # TODO: Add unread emails
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "clock" ];
-        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "tray" "group/system" ];
+        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "tray" ];
 
         # -- LEFT SIDE --
         clock = {
           format = "{:%H:%M %a %d %b}";
-        };
-
-        "group/system" = {
-          orientation = "horizontal";
-          drawer = {
-            transition-duration = 500;
-            transition-left-to-right = true;
-            click-to-reveal = true;
-          };
-          modules = [ "custom/system-arrow" "cpu" "memory" "disk" ];
-        };
-
-        "custom/system-arrow" = {
-          format = "󰍹 ";
-        };
-
-        # System info
-        cpu = {
-          interval = 10;
-          format = "{}%  ";
-          max-length = 10;
-        };
-        memory = {
-          interval = 30;
-          format = "{used:0.1f}G/{total:0.1f}G  ";
         };
 
         network = {
@@ -98,31 +73,35 @@
         all:unset;
       }
 
+      .modules-left,
+      .modules-center,
+      .modules-right {
+        margin: 15px 15px 0px 15px;
+      }
+
       .modules-left {
-        margin: 15px 0px 0px 15px;
       }
 
       .modules-center {
-        margin: 15px 0px 0px 0px;
-        padding: 0px 15px;
       }
 
       .modules-right {
-        margin: 15px 15px 0px 0px;
       }
 
-      #workspaces {
+      #workspaces,
+      #clock,
+      #wireplumber,
+      #bluetooth,
+      #network,
+      #battery,
+      #tray {
         background: @base00;
-      }
-
-      #clock {
-        background: @base00;
+        margin: 0px 5px;
         padding: 0px 15px;
       }
 
-      #system {
-        background: @base00;
-        padding: 0px 15px;
+      #workspaces button.active {
+        color: @base0D;
       }
     '';
   };

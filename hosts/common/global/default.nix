@@ -44,7 +44,6 @@
   services.openssh.enable = true;
 
   # Cloudflare DNS
-  # FIXME: This is not actually used
   networking.nameservers = [
     "1.1.1.1"
     "1.0.0.1"

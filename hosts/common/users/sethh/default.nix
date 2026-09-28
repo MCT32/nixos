@@ -20,7 +20,7 @@ in {
       "wheel"
     ];
 
-    shell = pkgs.fish;  # FIXME: Does this mean i dont need to include the package elsewhere?
+    shell = pkgs.fish;
 
     hashedPasswordFile = config.sops.secrets.sethh-password.path;
 

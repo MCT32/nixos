@@ -33,7 +33,7 @@
           }
           {
             keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + G\"");
-            dispatcher = "hl.dsp.exec_cmd(\"grim -g '$(slurp)' - | tee ~/Pictures/$(date +'%s_grim.png') | wl-copy\")";
+            dispatcher = "hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | tee ~/Pictures/$(date +'%s_grim.png') | wl-copy\")";
           }
         ];
     };

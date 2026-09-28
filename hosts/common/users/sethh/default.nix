@@ -25,7 +25,7 @@ in {
     hashedPasswordFile = config.sops.secrets.sethh-password.path;
 
     packages = with pkgs; [
-      home-manager  # FIXME: Is this required?
+      home-manager
     ];
   };
 

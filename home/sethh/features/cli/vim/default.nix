@@ -2,6 +2,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./ale.nix
+  ];
+
   programs.vim = {
     enable = true;
     defaultEditor = true;

@@ -4,11 +4,11 @@
 }: {
   imports = [
     ./fish
+    ./vim
 
     ./bat.nix
     ./btop.nix
     ./git.nix
-    ./vim.nix
   ];
 
   home.packages = with pkgs; [

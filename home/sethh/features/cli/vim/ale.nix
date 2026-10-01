@@ -6,7 +6,11 @@
     extraConfig = ''
       let g:ale_completion_enabled = 1
 
-      let g:ale_linters = { 'rust': ['analyzer'] }
+      let g:ale_linters = {
+      \  'rust': ['analyzer'],
+      \  'php': ['php', 'intelephense'],
+      \}
+
       let g:ale_fixers = {
       \  '*': ['remove_trailing_lines', 'trim_whitespace'],
       \  'rust': ['rustfmt'],
@@ -28,4 +32,8 @@
       nmap <leader>f  <Plug>(ale_fix)
     '';
   };
+
+  home.packages = with pkgs; [
+    intelephense
+  ];
 }

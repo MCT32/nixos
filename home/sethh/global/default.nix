@@ -32,12 +32,5 @@
     shellIntegration.enableFishIntegration = true;
   };
 
-  # TODO: Move
-  programs.yazi = {
-    enable = true;
-    enableFishIntegration = false;
-    shellWrapperName = "y";
-  };
-
   home.stateVersion = "25.11";
 }

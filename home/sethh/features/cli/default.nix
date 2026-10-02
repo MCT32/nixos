@@ -10,6 +10,7 @@
     ./bat.nix
     ./btop.nix
     ./git.nix
+    ./yazi.nix
   ];
 
   home.packages = with pkgs; [

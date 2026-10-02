@@ -17,6 +17,13 @@
     vlc
   ];
 
+  # TODO: Move
+  programs.kitty = {
+    enable = true;
+
+    shellIntegration.enableFishIntegration = true;
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [

@@ -27,12 +27,5 @@
     enable = true;
   };
 
-  # TODO: Move
-  programs.kitty = {
-    enable = true;
-
-    shellIntegration.enableFishIntegration = true;
-  };
-
   home.stateVersion = "25.11";
 }

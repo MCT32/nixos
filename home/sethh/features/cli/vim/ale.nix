@@ -7,12 +7,14 @@
       let g:ale_completion_enabled = 1
 
       let g:ale_linters = {
-      \  'rust': ['analyzer'],
+      \  'nix': ['statix'],
       \  'php': ['php', 'intelephense'],
+      \  'rust': ['analyzer'],
       \}
 
       let g:ale_fixers = {
       \  '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \  'nix': ['nixfmt'],
       \  'rust': ['rustfmt'],
       \}
       let g:ale_fix_on_save = 1
@@ -34,6 +36,11 @@
   };
 
   home.packages = with pkgs; [
+    # PHP
     intelephense
+
+    # Nix
+    nixfmt
+    statix
   ];
 }

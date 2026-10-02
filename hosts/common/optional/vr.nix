@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   # TODO: Maybe use vr nix overlay
   services.wivrn = {
     enable = true;
@@ -28,7 +29,7 @@
   environment.systemPackages = with pkgs; [
     slimevr
     xrizer
-  #   wayvr
+    #   wayvr
   ];
 
   # programs.alvr = {

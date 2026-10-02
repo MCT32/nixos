@@ -2,7 +2,8 @@
   osConfig,
   lib,
   ...
-}: {
+}:
+{
   programs.waybar = {
     enable = true;
 
@@ -11,14 +12,23 @@
         layer = "bottom";
         position = "top";
         height = 50;
-#       output = [
-#         "DP-1"
-#       ];
+        #       output = [
+        #         "DP-1"
+        #       ];
         # TODO: Add pomodoro timer
         # TODO: Add unread emails
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/submap"
+        ];
         modules-center = [ "clock" ];
-        modules-right = [ "wireplumber" "bluetooth" "network" "battery" "tray" ];
+        modules-right = [
+          "wireplumber"
+          "bluetooth"
+          "network"
+          "battery"
+          "tray"
+        ];
 
         # -- LEFT SIDE --
         clock = {
@@ -38,8 +48,32 @@
           };
           format = "{capacity}% {icon} ";
           format-icons = {
-            default = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-            charging = [ "󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
+            default = [
+              "󰂎"
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
+            charging = [
+              "󰢟"
+              "󰢜"
+              "󰂆"
+              "󰂇"
+              "󰂈"
+              "󰢝"
+              "󰂉"
+              "󰢞"
+              "󰂊"
+              "󰂋"
+              "󰂅"
+            ];
           };
         };
         "hyprland/workspaces" = {
@@ -48,15 +82,17 @@
             "browser" = "󰖟 ";
             "discord" = " ";
             "music" = "󰝚 ";
-          } // lib.optionalAttrs osConfig.programs.steam.enable {
+          }
+          // lib.optionalAttrs osConfig.programs.steam.enable {
             "steam" = "󰓓 ";
           };
           persistent-workspaces = {
-            "browser" = [];
-            "discord" = [];
-            "music" = [];
-          } // lib.optionalAttrs osConfig.programs.steam.enable {
-            "steam" = [];
+            "browser" = [ ];
+            "discord" = [ ];
+            "music" = [ ];
+          }
+          // lib.optionalAttrs osConfig.programs.steam.enable {
+            "steam" = [ ];
           };
         };
       };

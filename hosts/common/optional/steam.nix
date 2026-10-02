@@ -6,7 +6,7 @@
 
     # TODO: Consider opening remotePlay
     remotePlay.openFirewall = true;
-#   dedicatedServer.openFirewall = true;
+    #   dedicatedServer.openFirewall = true;
 
     protontricks.enable = true;
 
@@ -22,7 +22,7 @@
     mangohud
 
     # TODO: Probably not needed for every machine with steam
-    deadlock-mod-manager  # Deadlock mods
+    deadlock-mod-manager # Deadlock mods
   ];
 
   programs.gamemode.enable = true;

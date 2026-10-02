@@ -3,7 +3,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   # Enable bluetooth
   hardware.bluetooth = {
     enable = true;
@@ -21,7 +22,7 @@
   };
 
   networking.wireless = {
-    enable = true;  # Enables wireless support via wpa_supplicant.
+    enable = true; # Enables wireless support via wpa_supplicant.
 
     # Allow temporary wifi connections
     userControlled = true;
@@ -35,15 +36,15 @@
     };
 
     # University
-   networks.eduroam = {
-     auth = ''
-       key_mgmt=WPA-EAP
-       eap=PEAP
+    networks.eduroam = {
+      auth = ''
+        key_mgmt=WPA-EAP
+        eap=PEAP
 
-       identity="105751853@swin.edu.au"
-       password=ext:eduroam
-     '';
-   };
+        identity="105751853@swin.edu.au"
+        password=ext:eduroam
+      '';
+    };
 
     # Home
     networks."TP-Link_41BC" = {
@@ -56,5 +57,5 @@
     };
   };
 
-  users.groups.wpa_supplicant = {};
+  users.groups.wpa_supplicant = { };
 }

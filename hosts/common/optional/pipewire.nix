@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -12,7 +13,7 @@
     pulse.enable = true;
     jack.enable = true;
 
-    wireplumber.enable = true;  # Enable wireplumber for device nicknames and declaritive routing
+    wireplumber.enable = true; # Enable wireplumber for device nicknames and declaritive routing
   };
 
   # Per-device device nicknames

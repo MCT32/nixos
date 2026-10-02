@@ -5,7 +5,7 @@
     accounts."ivanhen99@gmail.com" = {
       enable = true;
       address = "ivanhen99@gmail.com";
-      userName =  "ivanhen99@gmail.com";
+      userName = "ivanhen99@gmail.com";
       realName = "Seth Henderson";
       primary = true;
       flavor = "gmail.com";

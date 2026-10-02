@@ -3,9 +3,11 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in {
+in
+{
   users.users.sethh = {
     isNormalUser = true;
     # shell = pkgs.fish;
@@ -30,7 +32,7 @@ in {
   };
 
   # Ensure dialout exists
-  users.groups.dialout = {};
+  users.groups.dialout = { };
 
   sops.secrets.sethh-password = {
     sopsFile = ../../secrets.yaml;

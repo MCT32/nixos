@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   imports = [
     ./bios.nix
   ];
@@ -38,7 +39,7 @@
   };
 
   # Patch config file with secret
-  home.activation.patchRetroarchConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.patchRetroarchConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     cfg=~/.config/retroarch/retroarch.cfg
     password="$(cat ${config.sops.secrets.retroachievements.path})"
     line="cheevos_password = \"$password\""

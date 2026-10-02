@@ -30,29 +30,32 @@
     nixcord.url = "github:FlameFlag/nixcord";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    stylix,
-    systems,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      stylix,
+      systems,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
 
-    # Merge libs
-    lib = nixpkgs.lib // home-manager.lib;
+      # Merge libs
+      lib = nixpkgs.lib // home-manager.lib;
 
-    # Configure packages for all systems
-    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
-    pkgsFor = lib.genAttrs (import systems) (
-      system:
+      # Configure packages for all systems
+      forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs (import systems) (
+        system:
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
         }
-    );
-    in {
+      );
+    in
+    {
       inherit lib;
 
       # Import all my modules
@@ -62,7 +65,7 @@
       nixosConfigurations = {
         # Gaming PC
         sentinel = lib.nixosSystem {
-          modules = [./hosts/sentinel];
+          modules = [ ./hosts/sentinel ];
           specialArgs = {
             inherit inputs outputs;
           };
@@ -70,7 +73,7 @@
 
         # Touchscreen HP laptop
         eve = lib.nixosSystem {
-          modules = [./hosts/eve];
+          modules = [ ./hosts/eve ];
           specialArgs = {
             inherit inputs outputs;
           };

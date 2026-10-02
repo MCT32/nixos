@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     # TODO: Look into different package variants
     libreoffice-qt-fresh
@@ -9,6 +10,6 @@
     hunspellDicts.en-au # Australian english
     hunspellDicts.de-de # German
     # TODO: Make toki pona work in libreoffice
-    hunspellDicts.tok   # toki pona
+    hunspellDicts.tok # toki pona
   ];
 }

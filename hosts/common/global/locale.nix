@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   i18n = {
     inputMethod = {
       enable = true;
@@ -19,7 +20,10 @@
             sha256 = "sha256-caQVPBPuZjOwbtcDhxAdmG7PHXe50OeSLkSBoCtMcrQ="; # Replace with actual hash if mismatched
           };
 
-          nativeBuildInputs = with pkgs; [ cmake pkg-config ];
+          nativeBuildInputs = with pkgs; [
+            cmake
+            pkg-config
+          ];
           buildInputs = with pkgs; [ fcitx5 ];
 
           cmakeFlags = [
@@ -35,7 +39,7 @@
 
     supportedLocales = lib.mkDefault [
       "en_AU.UTF-8/UTF-8"
-      "de_DE.UTF-8/UTF-8"  # German
+      "de_DE.UTF-8/UTF-8" # German
     ];
   };
 

@@ -3,7 +3,8 @@
   inputs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
@@ -20,7 +21,7 @@
   services.udisks2.enable = true;
 
   # Home manager global stuff
-  home-manager.useGlobalPkgs = true;  # TODO: What about user packages?
+  home-manager.useGlobalPkgs = true; # TODO: What about user packages?
   home-manager.extraSpecialArgs = {
     # TODO: What does this do
     inherit inputs outputs;

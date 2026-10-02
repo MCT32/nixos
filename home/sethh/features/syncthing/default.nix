@@ -3,15 +3,22 @@
   config,
   osConfig,
   ...
-}: {
+}:
+{
   services.syncthing = {
     enable = true;
 
     settings = {
       devices = {
-        "eve" = { id = "QCQDKVS-IZTQANC-JAS2GF5-DHQTLQ4-GXJ4A5A-4NK3LI3-DTCEXXC-WWXNMQ5"; };
-        "sentinel" = { id = "6GCXGWE-TV6XRWF-QOLYKAJ-NUF2SMC-2YHMNAL-GQCRZTH-T63ELTI-5DRKAQY"; };
-        "SM-G780F" = { id = "4SR3NFH-SH6IUJW-IKWWPI3-R4GRH3C-OFZWDMT-R5OWJQA-5X6ZYMX-DTTTDAD"; };
+        "eve" = {
+          id = "QCQDKVS-IZTQANC-JAS2GF5-DHQTLQ4-GXJ4A5A-4NK3LI3-DTCEXXC-WWXNMQ5";
+        };
+        "sentinel" = {
+          id = "6GCXGWE-TV6XRWF-QOLYKAJ-NUF2SMC-2YHMNAL-GQCRZTH-T63ELTI-5DRKAQY";
+        };
+        "SM-G780F" = {
+          id = "4SR3NFH-SH6IUJW-IKWWPI3-R4GRH3C-OFZWDMT-R5OWJQA-5X6ZYMX-DTTTDAD";
+        };
       };
 
       folders = {
@@ -35,19 +42,23 @@
         };
 
         "Uni" = {
-          enable = osConfig.networking.hostName == "eve"
-            || osConfig.networking.hostName == "sentinel";
+          enable = osConfig.networking.hostName == "eve" || osConfig.networking.hostName == "sentinel";
 
           path = "~/Uni";
-          devices = [ "eve" "sentinel" ];
+          devices = [
+            "eve"
+            "sentinel"
+          ];
         };
 
         "Projects" = {
-          enable = osConfig.networking.hostName == "eve"
-            || osConfig.networking.hostName == "sentinel";
+          enable = osConfig.networking.hostName == "eve" || osConfig.networking.hostName == "sentinel";
 
           path = "~/Projects";
-          devices = [ "eve" "sentinel" ];
+          devices = [
+            "eve"
+            "sentinel"
+          ];
         };
 
         "KeepassXC" = {
@@ -59,9 +70,7 @@
   };
 
   # PS2 memory cards symlink
-  systemd.user.tmpfiles.rules = 
-    lib.mkIf config.programs.retroarch.enable
-      [
-        "L ${config.home.homeDirectory}/.config/retroarch/system/pcsx2/memcards - - - - ${config.home.homeDirectory}/Games/Memcards"
-      ];
+  systemd.user.tmpfiles.rules = lib.mkIf config.programs.retroarch.enable [
+    "L ${config.home.homeDirectory}/.config/retroarch/system/pcsx2/memcards - - - - ${config.home.homeDirectory}/Games/Memcards"
+  ];
 }

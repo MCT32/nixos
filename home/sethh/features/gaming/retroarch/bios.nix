@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   bios = {
     ps1 = {
       scph5500 = pkgs.fetchurl {
@@ -23,13 +24,15 @@
       };
     };
   };
-in {
-  home.file = lib.mapAttrs' (name: source: {
-    name = ".config/retroarch/system/${name}.bin";
-    value = { inherit source; };
-  }) bios.ps1 //
-  lib.mapAttrs' (name: source: {
-    name = ".config/retroarch/system/pcsx2/bios/${name}.bin";
-    value = { inherit source; };
-  }) bios.ps2;
+in
+{
+  home.file =
+    lib.mapAttrs' (name: source: {
+      name = ".config/retroarch/system/${name}.bin";
+      value = { inherit source; };
+    }) bios.ps1
+    // lib.mapAttrs' (name: source: {
+      name = ".config/retroarch/system/pcsx2/bios/${name}.bin";
+      value = { inherit source; };
+    }) bios.ps2;
 }

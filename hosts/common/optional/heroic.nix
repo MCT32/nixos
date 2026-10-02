@@ -3,10 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     (heroic.override {
-      extraPkgs = pkgs': with pkgs'; [
-        gamescope
-        gamemode
-      ];
+      extraPkgs =
+        pkgs': with pkgs'; [
+          gamescope
+          gamemode
+        ];
     })
   ];
 

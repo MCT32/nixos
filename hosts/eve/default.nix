@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     # Hardware configurations
     inputs.hardware.nixosModules.common-gpu-intel
@@ -26,7 +27,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking= {
+  networking = {
     hostName = "eve";
     useDHCP = true;
   };
@@ -64,7 +65,10 @@
   };
 
   # TODO: Make global
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

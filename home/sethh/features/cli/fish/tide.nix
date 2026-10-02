@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # TODO: Make tide config declaritive
   programs.fish = {
     plugins = [

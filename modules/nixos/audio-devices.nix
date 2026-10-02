@@ -1,9 +1,11 @@
 {
   lib,
   ...
-}: let
+}:
+let
   inherit (lib) mkOption types;
-in {
+in
+{
   options.audio-devices.nicknames = mkOption {
     type = types.listOf (
       types.submodule {
@@ -19,7 +21,7 @@ in {
         };
       }
     );
-    default = [];
+    default = [ ];
   };
   # options.audio-devices.disableOthers = mkOption {
   #   type = types.booleans;

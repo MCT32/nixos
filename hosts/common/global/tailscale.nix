@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   sops.secrets.tailscale-key = {
     sopsFile = ../secrets.yaml;
     neededForUsers = true;

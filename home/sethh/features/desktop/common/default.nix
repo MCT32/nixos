@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   # TODO: Make these not common
   imports = [
     ./discord.nix
@@ -23,7 +24,10 @@
     ];
     config = {
       hyprland = {
-        default = [ "hyprland" "gtk" ];
+        default = [
+          "hyprland"
+          "gtk"
+        ];
       };
     };
   };

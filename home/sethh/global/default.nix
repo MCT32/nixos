@@ -4,7 +4,8 @@
   inputs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     ../features/cli
   ]
@@ -16,8 +17,8 @@
   sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
 
   home.packages = with pkgs; [
-    jellyfin-desktop  # TODO: Move to a feature
-    brightnessctl     # TODO: Move to machine specific config
+    jellyfin-desktop # TODO: Move to a feature
+    brightnessctl # TODO: Move to machine specific config
   ];
 
   # TODO: Move

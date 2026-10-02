@@ -22,10 +22,5 @@
 
   sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
 
-  # TODO: Move
-  programs.rofi = {
-    enable = true;
-  };
-
   home.stateVersion = "25.11";
 }

@@ -24,6 +24,11 @@
     shellIntegration.enableFishIntegration = true;
   };
 
+  # TODO: Move
+  programs.rofi = {
+    enable = true;
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [

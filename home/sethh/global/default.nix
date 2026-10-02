@@ -17,7 +17,6 @@
   sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
 
   home.packages = with pkgs; [
-    jellyfin-desktop # TODO: Move to a feature
     brightnessctl # TODO: Move to machine specific config
   ];
 

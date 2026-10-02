@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     jetbrains.idea-oss
     tidal-hifi
+    jellyfin-desktop
     vlc
   ];
 

@@ -33,7 +33,7 @@
           )
           [
             {
-              keys = (lib.generators.mkLuaInline "mod .. \" + backspace\"");
+              keys = lib.generators.mkLuaInline "mod .. \" + backspace\"";
               dispatcher = "hl.dsp.exec_cmd(\"hyprlock\")";
             }
           ];

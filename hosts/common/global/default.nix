@@ -21,15 +21,18 @@
   services.udisks2.enable = true;
 
   # Home manager global stuff
-  home-manager.useGlobalPkgs = true; # TODO: What about user packages?
-  home-manager.extraSpecialArgs = {
-    # TODO: What does this do
-    inherit inputs outputs;
-  };
+  home-manager = {
+    useGlobalPkgs = true; # TODO: What about user packages?
 
-  home-manager.sharedModules = [
-    inputs.sops-nix.homeManagerModules.sops
-  ];
+    extraSpecialArgs = {
+      # TODO: What does this do
+      inherit inputs outputs;
+    };
+
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+    ];
+  };
 
   nixpkgs = {
     config = {

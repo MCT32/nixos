@@ -59,9 +59,9 @@
         monitor = map (m: {
           output = m.name;
           mode = "${toString m.width}x${toString m.height}@${toString m.refreshRate},${m.position}";
-          scale = m.scale;
+          inherit (m) scale;
           disabled = !m.enabled;
-        }) (config.monitors);
+        }) config.monitors;
 
         # TODO: Consider experimenting with submaps
         bind =
@@ -83,57 +83,57 @@
             (
               [
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + Q\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + Q\"";
                   dispatcher = "hl.dsp.exec_cmd(terminal)";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + C\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + C\"";
                   dispatcher = "hl.dsp.window.close()";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + M\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + M\"";
                   dispatcher = "hl.dsp.exec_cmd(\"uwsm stop\")";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + E\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + E\"";
                   dispatcher = "hl.dsp.exec_cmd(fileManager)";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + V\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + V\"";
                   dispatcher = "hl.dsp.window.float()";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + R\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + R\"";
                   dispatcher = "hl.dsp.exec_cmd(menu)";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + P\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + P\"";
                   dispatcher = "hl.dsp.window.pseudo()";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + J\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + J\"";
                   dispatcher = "hl.dsp.layout(\"togglesplit\")";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + F\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + F\"";
                   dispatcher = "hl.dsp.window.fullscreen()";
                 }
 
                 # Focus
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + left\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + left\"";
                   dispatcher = "hl.dsp.focus({direction = \"left\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + right\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + right\"";
                   dispatcher = "hl.dsp.focus({direction = \"right\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + up\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + up\"";
                   dispatcher = "hl.dsp.focus({direction = \"up\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + down\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + down\"";
                   dispatcher = "hl.dsp.focus({direction = \"down\"})";
                 }
 
@@ -153,11 +153,11 @@
 
                 # Mouse
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + mouse:272\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + mouse:272\"";
                   dispatcher = "hl.dsp.window.drag()";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + mouse:273\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + mouse:273\"";
                   dispatcher = "hl.dsp.window.resize()";
                 }
 
@@ -211,37 +211,37 @@
 
                 # Workspaces
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + D\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + D\"";
                   dispatcher = "hl.dsp.focus({workspace = \"name:discord\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + D\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + D\"";
                   dispatcher = "hl.dsp.window.move({workspace = \"name:discord\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + A\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + A\"";
                   dispatcher = "hl.dsp.focus({workspace = \"name:browser\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + A\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + A\"";
                   dispatcher = "hl.dsp.window.move({workspace = \"name:browser\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + T\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + T\"";
                   dispatcher = "hl.dsp.focus({workspace = \"name:music\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + T\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + T\"";
                   dispatcher = "hl.dsp.window.move({workspace = \"name:music\"})";
                 }
               ]
               ++ lib.optionals osConfig.programs.steam.enable [
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + S\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + S\"";
                   dispatcher = "hl.dsp.focus({workspace = \"name:steam\"})";
                 }
                 {
-                  keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + S\"");
+                  keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + S\"";
                   dispatcher = "hl.dsp.window.move({workspace = \"name:steam\"})";
                 }
               ]
@@ -253,11 +253,11 @@
                   in
                   [
                     {
-                      keys = (lib.generators.mkLuaInline "mod .. \" + code:1${toString i}\"");
+                      keys = lib.generators.mkLuaInline "mod .. \" + code:1${toString i}\"";
                       dispatcher = "hl.dsp.focus({workspace = \"${toString ws}\"})";
                     }
                     {
-                      keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + code:1${toString i}\"");
+                      keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + code:1${toString i}\"";
                       dispatcher = "hl.dsp.window.move({workspace = \"${toString ws}\"})";
                     }
                   ]

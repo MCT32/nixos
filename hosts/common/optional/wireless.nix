@@ -31,29 +31,31 @@
     secretsFile = config.sops.secrets.wireless.path;
 
     # Mobile hotspot
-    networks.DsquariusGreenJr = {
-      pskRaw = "ext:hotspot";
-    };
+    networks = {
+      DsquariusGreenJr = {
+        pskRaw = "ext:hotspot";
+      };
 
-    # University
-    networks.eduroam = {
-      auth = ''
-        key_mgmt=WPA-EAP
-        eap=PEAP
+      # University
+      eduroam = {
+        auth = ''
+          key_mgmt=WPA-EAP
+          eap=PEAP
 
-        identity="105751853@swin.edu.au"
-        password=ext:eduroam
-      '';
-    };
+          identity="105751853@swin.edu.au"
+          password=ext:eduroam
+        '';
+      };
 
-    # Home
-    networks."TP-Link_41BC" = {
-      pskRaw = "ext:home";
-    };
+      # Home
+      "TP-Link_41BC" = {
+        pskRaw = "ext:home";
+      };
 
-    # Grandparents
-    networks."Aussie Broadband 8674" = {
-      pskRaw = "ext:grandparents";
+      # Grandparents
+      "Aussie Broadband 8674" = {
+        pskRaw = "ext:grandparents";
+      };
     };
   };
 

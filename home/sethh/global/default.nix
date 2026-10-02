@@ -11,14 +11,16 @@
   ]
   ++ (builtins.attrValues outputs.homeManagerModules);
 
-  home.username = "sethh";
-  home.homeDirectory = "/home/sethh";
+  home = {
+    username = "sethh";
+    homeDirectory = "/home/sethh";
+
+    packages = with pkgs; [
+      brightnessctl # TODO: Move to machine specific config
+    ];
+  };
 
   sops.age.keyFile = "/home/sethh/.config/sops/age/keys.txt";
-
-  home.packages = with pkgs; [
-    brightnessctl # TODO: Move to machine specific config
-  ];
 
   # TODO: Move
   programs.rofi = {

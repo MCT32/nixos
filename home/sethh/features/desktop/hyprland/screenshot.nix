@@ -30,11 +30,11 @@
           )
           [
             {
-              keys = (lib.generators.mkLuaInline "mod .. \" + G\"");
+              keys = lib.generators.mkLuaInline "mod .. \" + G\"";
               dispatcher = "hl.dsp.exec_cmd(\"grim - | tee ~/Pictures/$(date +'%s_grim.png') | wl-copy\")";
             }
             {
-              keys = (lib.generators.mkLuaInline "mod .. \" + SHIFT + G\"");
+              keys = lib.generators.mkLuaInline "mod .. \" + SHIFT + G\"";
               dispatcher = "hl.dsp.exec_cmd(\"grim -g \\\"$(slurp)\\\" - | tee ~/Pictures/$(date +'%s_grim.png') | wl-copy\")";
             }
           ];

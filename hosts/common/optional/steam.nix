@@ -1,19 +1,24 @@
 { pkgs, ... }:
 
 {
-  programs.steam = {
-    enable = true;
+  programs = {
+    steam = {
+      enable = true;
 
-    # TODO: Consider opening remotePlay
-    remotePlay.openFirewall = true;
-    #   dedicatedServer.openFirewall = true;
+      # TODO: Consider opening remotePlay
+      remotePlay.openFirewall = true;
+      #   dedicatedServer.openFirewall = true;
 
-    protontricks.enable = true;
+      protontricks.enable = true;
 
-    extraCompatPackages = with pkgs; [
-      # TODO: See if there are other proton versions to add
-      proton-ge-bin
-    ];
+      extraCompatPackages = with pkgs; [
+        # TODO: See if there are other proton versions to add
+        proton-ge-bin
+      ];
+    };
+
+    gamemode.enable = true;
+    gamescope.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -24,7 +29,4 @@
     # TODO: Probably not needed for every machine with steam
     deadlock-mod-manager # Deadlock mods
   ];
-
-  programs.gamemode.enable = true;
-  programs.gamescope.enable = true;
 }

@@ -61,9 +61,6 @@
   #   options = "grp:alt_shift_toggle";
   # };
 
-  # Move to an optional, enable as a service
-  programs.noisetorch.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

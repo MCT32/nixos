@@ -20,6 +20,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Declaritive disk partitioning
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Stylix repo
     stylix = {
       url = "github:nix-community/stylix/master";
@@ -74,6 +80,14 @@
         # Touchscreen HP laptop
         eve = lib.nixosSystem {
           modules = [ ./hosts/eve ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+        };
+
+        # Server
+        wheatley = lib.nixosSystem {
+          modules = [ ./hosts/wheatley inputs.disko.nixosModules.disko ];
           specialArgs = {
             inherit inputs outputs;
           };

@@ -4,7 +4,7 @@
     plugins = [
       {
         name = "bobthefish";
-        src = pkgs.fishPlugins.bobthefish;
+        src = pkgs.fishPlugins.bobthefish.src;
       }
     ];
   };

@@ -9,12 +9,12 @@ creation_rules:
     - age:
       - *eve
 
-  - path_regex: hosts/sentinel/secrets.yaml$y4
+  - path_regex: hosts/sentinel/secrets.yaml$
     key_groups:
     - age:
       - *sentinel
 
-  - path_regex: hosts/wheatley/secrets.yaml$y4
+  - path_regex: hosts/wheatley/secrets.yaml$
     key_groups:
     - age:
       - *wheatley

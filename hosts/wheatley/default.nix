@@ -14,6 +14,8 @@
 
     ../common/global
     ../common/users/sethh
+
+    ./services/ejabberd
   ];
 
   # Bootloader.

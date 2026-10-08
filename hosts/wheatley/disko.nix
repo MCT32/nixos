@@ -19,9 +19,15 @@
           root = {
             size = "100%";
             content = {
-              type = "filesystem";
-              format = "btrfs";
+              type = "btrfs";
               mountpoint = "/";
+              mountOptions = [ "compress=zstd" "noatime" ];
+              subvolumes = {
+                "/@nix" = {
+                  mountpoint = "/nix";
+                  mountOptions = [ "compress=zstd"  "noatime" ];
+                };
+              };
             };
           };
         };

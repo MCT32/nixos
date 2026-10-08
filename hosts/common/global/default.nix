@@ -45,7 +45,10 @@
   ];
 
   # Enable ssh
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+  };
 
   # Cloudflare DNS
   networking.nameservers = [

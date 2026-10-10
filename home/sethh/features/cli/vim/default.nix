@@ -14,6 +14,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-airline
       vim-commentary
+      vim-svelte
       vim-teal
     ];
 

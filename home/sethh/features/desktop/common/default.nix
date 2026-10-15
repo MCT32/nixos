@@ -6,6 +6,7 @@
   # TODO: Make these not common
   imports = [
     ./discord.nix
+    ./librewolf.nix
     ./qutebrowser
   ];
 

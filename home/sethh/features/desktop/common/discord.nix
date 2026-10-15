@@ -33,6 +33,8 @@
           font-variant-ligatures: common-ligatures discretionary-ligatures !important;
           text-rendering: optimizeLegibility !important;
         }
+
+        * { border-radius: 0px !important; }
     '';
 
     config = {

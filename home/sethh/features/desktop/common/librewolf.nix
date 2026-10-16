@@ -1,10 +1,28 @@
 {
+  pkgs,
+  ...
+}:
+{
   programs.librewolf = {
     enable = true;
 
     profiles = {
       default = {
-        extensions.force = true;
+        extensions = {
+          force = true;
+
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            ublock-origin
+            sidebery
+          ];
+        };
+
+        userChrome = ''
+          #TabsToolbar { display: none !important; }
+          #sidebar-header { display: none !important; }
+          #sidebar-box { padding-inline-start: 0px !important; }
+          * { border-radius: 0px !important; }
+        '';
       };
     };
   };

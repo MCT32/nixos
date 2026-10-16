@@ -34,6 +34,12 @@
 
     # Nixcord
     nixcord.url = "github:FlameFlag/nixcord";
+
+    # Nix User Repository
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -87,7 +93,10 @@
 
         # Server
         wheatley = lib.nixosSystem {
-          modules = [ ./hosts/wheatley inputs.disko.nixosModules.disko ];
+          modules = [
+            ./hosts/wheatley
+            inputs.disko.nixosModules.disko
+          ];
           specialArgs = {
             inherit inputs outputs;
           };

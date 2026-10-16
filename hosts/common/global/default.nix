@@ -38,6 +38,8 @@
     config = {
       allowUnfree = true;
     };
+
+    overlays = [ inputs.nur.overlays.default ];
   };
 
   nixpkgs.config.permittedInsecurePackages = [

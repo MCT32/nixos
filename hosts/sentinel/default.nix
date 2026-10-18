@@ -48,10 +48,13 @@
   services.displayManager = {
     sddm = {
       enable = true;
-      wayland.enable = true;
+      #wayland.enable = true;
     };
     defaultSession = "hyprland-uwsm";
   };
+  # TODO: Remove
+  services.xserver.enable = true;
+
   # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11

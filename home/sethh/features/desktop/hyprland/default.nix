@@ -137,20 +137,6 @@
                   dispatcher = "hl.dsp.focus({direction = \"down\"})";
                 }
 
-                # Discord passthrough
-                {
-                  keys = "mouse:275";
-                  dispatcher = "hl.dsp.pass({window = \"class:^(discord)$\"})";
-                }
-                {
-                  keys = "KP_Home";
-                  dispatcher = "hl.dsp.pass({window = \"class:^(discord)$\"})";
-                }
-                {
-                  keys = "KP_Up";
-                  dispatcher = "hl.dsp.pass({window = \"class:^(discord)$\"})";
-                }
-
                 # Mouse
                 {
                   keys = lib.generators.mkLuaInline "mod .. \" + mouse:272\"";

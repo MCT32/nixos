@@ -3,9 +3,10 @@
   ...
 }:
 {
+  # TODO: Use home-manager module
   home.packages = with pkgs; [
     # TODO: Look into different package variants
-    libreoffice-qt-fresh
+    libreoffice-qt
     hunspell
     hunspellDicts.en-au # Australian english
     hunspellDicts.de-de # German

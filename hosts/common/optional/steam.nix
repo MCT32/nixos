@@ -5,14 +5,12 @@
     steam = {
       enable = true;
 
-      # TODO: Consider opening remotePlay
       remotePlay.openFirewall = true;
       #   dedicatedServer.openFirewall = true;
 
       protontricks.enable = true;
 
       extraCompatPackages = with pkgs; [
-        # TODO: See if there are other proton versions to add
         proton-ge-bin
       ];
     };

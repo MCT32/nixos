@@ -101,6 +101,10 @@ in
           #sidebar-box { padding-inline-start: 0px !important; }
           * { border-radius: 0px !important; }
         '';
+
+        userContent = ''
+          * { border-radius: 0px !important; }
+        '';
       };
     };
   };

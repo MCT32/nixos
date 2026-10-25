@@ -22,6 +22,7 @@
           #TabsToolbar { display: none !important; }
           #sidebar-header { display: none !important; }
           #sidebar-panel-header { display: none !important; }
+          #sidebar-splitter { display: none !important; }
           #sidebar-box { padding-inline-start: 0px !important; }
           * { border-radius: 0px !important; }
         '';

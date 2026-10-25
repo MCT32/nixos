@@ -22,6 +22,10 @@
     enable = true;
 
     shellIntegration.enableFishIntegration = true;
+
+    settings = {
+      remember_window_size = false;
+    };
   };
 
   # TODO: Move

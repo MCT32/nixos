@@ -2,6 +2,16 @@
   pkgs,
   ...
 }:
+# TODO: Clean up; split into subconfigs and use functions
+let
+  containers = {
+    entertainment = {
+      color = "red";
+      icon = "chill";
+      id = 1;
+    };
+  };
+in
 {
   programs.librewolf = {
     enable = true;
@@ -15,12 +25,73 @@
             ublock-origin
             sidebery
             tridactyl
+            multi-account-containers
+            cookie-autodelete
           ];
+
+          settings = {
+            "@testpilot-containers".settings = {
+              "siteContainerMap@@_www.youtube.com" = {
+                userContextId = toString containers.entertainment.id;
+                neverAsk = false;
+                hostname = "www.youtube.com";
+              };
+              "siteContainerMap@@_youtu.be" = {
+                userContextId = toString containers.entertainment.id;
+                neverAsk = false;
+                hostname = "youtu.be";
+              };
+            };
+
+            "CookieAutoDelete@kennydo.com".settings = {
+              state = builtins.toJSON {
+                settings = {
+                  # Clear cookies by default
+                  activeMode = {
+                    name = "activeMode";
+                    value = true;
+                  };
+                  # Enable container support
+                  contextualIdentities = {
+                    name = "contextualIdentities";
+                    value = true;
+                  };
+                  contextualIdentitiesAutoRemove = {
+                    name = "contextualIdentitiesAutoRemove";
+                    value = true;
+                  };
+                };
+
+                lists = {
+                  "firefox-container-${toString containers.entertainment.id}" = [
+                    {
+                      expression = "*.youtube.com";
+                      listType = "WHITE";
+                      storeId = "firefox-container-${toString containers.entertainment.id}";
+                    }
+                    {
+                      expression = "*.google.com";
+                      listType = "WHITE";
+                      storeId = "firefox-container-${toString containers.entertainment.id}";
+                    }
+                  ];
+                };
+              };
+            };
+          };
         };
+
         settings = {
           # Must be whitelisted in HTTPS-Only exceptions, cant be done declaritively
           "browser.startup.homepage" = "http://hal9000/";
+
+          # Disable cookie clearing, handled by extension instead
+          "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+          "privacy.clearOnShutdown.cookies" = false;
         };
+
+        containersForce = true;
+        inherit containers;
 
         userChrome = ''
           #TabsToolbar { display: none !important; }

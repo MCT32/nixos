@@ -17,6 +17,10 @@
             tridactyl
           ];
         };
+        settings = {
+          # Must be whitelisted in HTTPS-Only exceptions, cant be done declaritively
+          "browser.startup.homepage" = "http://hal9000/";
+        };
 
         userChrome = ''
           #TabsToolbar { display: none !important; }

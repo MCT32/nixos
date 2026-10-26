@@ -27,6 +27,8 @@ in
             tridactyl
             multi-account-containers
             cookie-autodelete
+            sponsorblock          # TODO: Configure settings
+            enhancer-for-youtube  # TODO: Configure settings
           ];
 
           settings = {

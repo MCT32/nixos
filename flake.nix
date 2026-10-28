@@ -26,6 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    preservation.url = "github:nix-community/preservation";
+
     # Stylix repo
     stylix = {
       url = "github:nix-community/stylix/master";
@@ -96,6 +98,7 @@
           modules = [
             ./hosts/wheatley
             inputs.disko.nixosModules.disko
+            inputs.preservation.nixosModules.preservation
           ];
           specialArgs = {
             inherit inputs outputs;

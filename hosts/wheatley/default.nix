@@ -14,6 +14,7 @@
 
     ../common/global
     ../common/users/sethh
+    ../common/optional/preservation.nix
 
     ./services/ejabberd
   ];

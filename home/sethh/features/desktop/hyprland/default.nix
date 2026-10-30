@@ -289,8 +289,8 @@
         ]
         ++ lib.optionals osConfig.programs.steam.enable [
           {
-            match.class = "^(discord)$";
-            workspace = "name:discord";
+            match.class = "^(steam)$";
+            workspace = "name:steam";
             no_initial_focus = true;
           }
         ];

@@ -9,6 +9,7 @@
     ./features/gaming
     ./features/pass
     ./features/productivity
+    ./features/reverse_engineering
     ./features/syncthing
     ./features/udiskie
   ];

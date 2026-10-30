@@ -11,5 +11,6 @@
     prismlauncher
     wheelwizard
     dolphin-emu
+    (pkgs.callPackage ../../../../pkgs/xenia-edge.nix {})
   ];
 }

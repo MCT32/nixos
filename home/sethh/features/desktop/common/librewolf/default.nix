@@ -1,4 +1,6 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
@@ -13,6 +15,10 @@ let
   };
 in
 {
+  imports = [
+    ./style
+  ];
+
   programs.librewolf = {
     enable = true;
 
@@ -27,8 +33,8 @@ in
             tridactyl
             multi-account-containers
             cookie-autodelete
-            sponsorblock          # TODO: Configure settings
-            enhancer-for-youtube  # TODO: Configure settings
+            sponsorblock # TODO: Configure settings
+            enhancer-for-youtube # TODO: Configure settings
           ];
 
           settings = {
@@ -94,19 +100,6 @@ in
 
         containersForce = true;
         inherit containers;
-
-        userChrome = ''
-          #TabsToolbar { display: none !important; }
-          #sidebar-header { display: none !important; }
-          #sidebar-panel-header { display: none !important; }
-          #sidebar-splitter { display: none !important; }
-          #sidebar-box { padding-inline-start: 0px !important; }
-          * { border-radius: 0px !important; }
-        '';
-
-        userContent = ''
-          * { border-radius: 0px !important; }
-        '';
       };
     };
   };

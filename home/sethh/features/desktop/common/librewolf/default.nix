@@ -35,6 +35,7 @@ in
             cookie-autodelete
             sponsorblock # TODO: Configure settings
             enhancer-for-youtube # TODO: Configure settings
+            keepassxc-browser # TODO: Configure settings
           ];
 
           settings = {

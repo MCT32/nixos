@@ -5,6 +5,8 @@
     ./features/art
     ./features/desktop/hyprland
     ./features/desktop/keepassxc
+    ./features/desktop/obs.nix
+    ./features/desktop/tagstudio.nix
     ./features/dev
     ./features/gaming
     ./features/pass

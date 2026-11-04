@@ -42,6 +42,11 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    tagstudio = {
+      url = "github:TagStudioDev/TagStudio";
+      inputs.nixpkgs.follows = "nixpkgs"; # Use the same package set as your flake.
+    };
   };
 
   outputs =
@@ -50,6 +55,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      tagstudio,
       systems,
       ...
     }@inputs:

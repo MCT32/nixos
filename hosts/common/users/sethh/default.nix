@@ -16,6 +16,7 @@ in
       "docker"
       "libvirtd"
       "scanner"
+      "input"
       "uinput"
       "vboxusers"
       "wpa_supplicant"

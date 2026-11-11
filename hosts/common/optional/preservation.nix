@@ -7,7 +7,7 @@
       ];
       directories = [
         "/var/lib/systemd/timers"
-        "/var/lib/nixos"
+        { directory = "/var/lib/nixos"; inInitrd = true; }
         "/var/log"
       ];
     };

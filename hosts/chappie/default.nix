@@ -28,6 +28,21 @@
     useDHCP = true;
   };
 
+  services.displayManager = {
+    # TODO: Switch away from sddm, maybe make this an optional
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    defaultSession = "hyprland";
+  };
+
+  # TODO: Make an optional
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb = {
   #   layout = "au,de";

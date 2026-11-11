@@ -26,7 +26,6 @@
     ../common/optional/sunshine.nix
     ../common/optional/virt-manager.nix
     ../common/optional/virtualbox.nix
-    ../common/optional/vmware.nix
     ../common/optional/vr.nix
     ../common/optional/waydroid.nix
   ];

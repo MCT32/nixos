@@ -99,6 +99,18 @@
           };
         };
 
+        # Framework 13 Pro
+        chappie = lib.nixosSystem {
+          modules = [
+            ./hosts/chappie
+            inputs.disko.nixosModules.disko
+            inputs.preservation.nixosModules.preservation
+          ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+        };
+
         # Server
         wheatley = lib.nixosSystem {
           modules = [

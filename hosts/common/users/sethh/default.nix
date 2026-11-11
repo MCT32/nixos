@@ -33,6 +33,7 @@ in
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+Il81e31juwUDG1LVcd+dZHSistwdu8178NMemxrYi sethh@eve"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBU3ejdI2PGTv+PXX8eOWXThbc9YuZ54x0Q9EUoJcxnJ mct32@hal9000"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwQoDsvuZ+k9BkHLeA7NWgkZ6gkIqzgeN6mNBaVHKj/ sethh@wheatley"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMQ9MSQvFIN1LNm8TH3LgNnS3a7+S3N3kmLkDulQdlD sethh@chappie"
     ];
 
     packages = with pkgs; [

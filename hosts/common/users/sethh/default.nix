@@ -8,6 +8,10 @@ let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
+  imports = [
+    ./preservation.nix
+  ];
+
   users.users.sethh = {
     isNormalUser = true;
     # shell = pkgs.fish;

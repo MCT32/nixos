@@ -45,4 +45,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  sops.age.keyFile = "/persist/home/sethh/.config/sops/age/keys.txt";
 }

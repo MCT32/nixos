@@ -25,16 +25,28 @@
               settings.allowDiscards = true;
               content = {
                 type = "btrfs";
-                mountpoint = "/";
-                mountOptions = [ "compress=zstd" "noatime" ];
+                extraArgs = [ "-f" ];
                 subvolumes = {
+                  "/rootfs" = {
+                    mountpoint = "/";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
                   "/nix" = {
                     mountpoint = "/nix";
-                    mountOptions = [ "compress=zstd"  "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                   "/persist" = {
                     mountpoint = "/persist";
-                    mountOptions = [ "compress=zstd"  "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                 };
               };
@@ -44,4 +56,6 @@
       };
     };
   };
+
+  fileSystems."/persist".neededForBoot = true;
 }

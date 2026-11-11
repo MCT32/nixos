@@ -13,6 +13,8 @@
 
     ../common/global
     ../common/users/sethh
+
+    ../common/optional/pipewire.nix
     ../common/optional/preservation.nix
     ../common/optional/wireless.nix
   ];

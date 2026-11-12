@@ -1,0 +1,1 @@
+/nix/store/kjiclz5fzc1g0w9jgifn0v1kdgi477ba-nixos-system-chappie-26.11.20261105.f9a75f4

@@ -47,81 +47,12 @@
       url = "github:TagStudioDev/TagStudio";
       inputs.nixpkgs.follows = "nixpkgs"; # Use the same package set as your flake.
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      stylix,
-      tagstudio,
-      systems,
-      ...
-    }@inputs:
-    let
-      inherit (self) outputs;
-
-      # Merge libs
-      lib = nixpkgs.lib // home-manager.lib;
-
-      # Configure packages for all systems
-      forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
-      pkgsFor = lib.genAttrs (import systems) (
-        system:
-        import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        }
-      );
-    in
-    {
-      inherit lib;
-
-      # Import all my modules
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-
-      nixosConfigurations = {
-        # Gaming PC
-        sentinel = lib.nixosSystem {
-          modules = [ ./hosts/sentinel ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
-        };
-
-        # Touchscreen HP laptop
-        eve = lib.nixosSystem {
-          modules = [ ./hosts/eve ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
-        };
-
-        # Framework 13 Pro
-        chappie = lib.nixosSystem {
-          modules = [
-            ./hosts/chappie
-            inputs.disko.nixosModules.disko
-            inputs.preservation.nixosModules.preservation
-          ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
-        };
-
-        # Server
-        wheatley = lib.nixosSystem {
-          modules = [
-            ./hosts/wheatley
-            inputs.disko.nixosModules.disko
-            inputs.preservation.nixosModules.preservation
-          ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
-        };
-      };
-    };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; }
+      (inputs.import-tree ./modules);
 }

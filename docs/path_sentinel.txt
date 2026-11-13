@@ -1,1 +1,1 @@
-/nix/store/4pi7wwql0afk3bhai12jz3ky2fb1k8d6-nixos-system-sentinel-26.11.20261105.f9a75f4
+/nix/store/8jwxv7qlnql290m8pn22m6vf0702vv0h-nixos-system-sentinel-26.11.20261105.f9a75f4

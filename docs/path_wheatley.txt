@@ -1,1 +1,1 @@
-/nix/store/d80hrv9yvjbkjd1pcr8xp4xsgilcwbwa-nixos-system-wheatley-26.11.20261105.f9a75f4
+/nix/store/rzdxlg76v0ffzyd1sps8j9jabidfg5nh-nixos-system-wheatley-26.11.20261105.f9a75f4

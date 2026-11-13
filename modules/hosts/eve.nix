@@ -117,7 +117,6 @@ in
 
       # TODO: See whats already handled by nix-hardware
       hardware = {
-        cpu.intel.updateMicrocode = true;
         enableRedistributableFirmware = true;
       };
     };

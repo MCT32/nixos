@@ -148,7 +148,6 @@ in
 
       # TODO: See whats already handled by nix-hardware
       hardware = {
-        cpu.amd.updateMicrocode = true;
         enableRedistributableFirmware = true;
       };
 

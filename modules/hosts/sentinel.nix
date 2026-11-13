@@ -19,6 +19,8 @@ in
       imports = [
         config.flake.modules.nixos.base
 
+        config.flake.modules.nixos.hyprland
+
         inputs.hardware.nixosModules.common-gpu-nvidia
         inputs.hardware.nixosModules.common-cpu-amd
         inputs.hardware.nixosModules.common-pc-ssd
@@ -95,12 +97,9 @@ in
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-      # TODO: Add to feature
       programs.hyprland = {
-        enable = true;
         # TODO: Remove after dendritic refactor
         withUWSM = true;
-        xwayland.enable = true;
       };
 
       audio-devices = {

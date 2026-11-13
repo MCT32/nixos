@@ -19,6 +19,8 @@ in
       imports = [
         config.flake.modules.nixos.base
 
+        config.flake.modules.nixos.hyprland
+
         inputs.hardware.nixosModules.framework-amd-ai-300-series
         inputs.disko.nixosModules.disko
         inputs.preservation.nixosModules.preservation
@@ -131,12 +133,6 @@ in
       };
 
       fileSystems."/persist".neededForBoot = true;
-
-      # TODO: Add to feature
-      programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
-      };
 
       # TODO: See whats already handled by nix-hardware
       hardware = {

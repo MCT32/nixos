@@ -17,6 +17,8 @@ in
     { lib, ... }:
     {
       imports = [
+        config.flake.modules.nixos.base
+
         inputs.hardware.nixosModules.framework-amd-ai-300-series
         inputs.disko.nixosModules.disko
         inputs.preservation.nixosModules.preservation
@@ -65,16 +67,6 @@ in
             wayland.enable = true;
           };
           defaultSession = "hyprland";
-        };
-      };
-
-      nix = {
-        settings = {
-          # TODO: Make common
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
         };
       };
 

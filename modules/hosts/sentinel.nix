@@ -17,6 +17,8 @@ in
     { lib, ... }:
     {
       imports = [
+        config.flake.modules.nixos.base
+
         inputs.hardware.nixosModules.common-gpu-nvidia
         inputs.hardware.nixosModules.common-cpu-amd
         inputs.hardware.nixosModules.common-pc-ssd
@@ -88,12 +90,6 @@ in
         settings = {
           substituters = [ "https://cache.nixos-cuda.org" ];
           trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
-
-          # TODO: Make common
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
         };
       };
 

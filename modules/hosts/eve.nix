@@ -17,6 +17,8 @@ in
     { lib, ... }:
     {
       imports = [
+        config.flake.modules.nixos.base
+
         inputs.hardware.nixosModules.common-gpu-intel
         inputs.hardware.nixosModules.common-cpu-intel
         inputs.hardware.nixosModules.common-pc-ssd
@@ -68,16 +70,6 @@ in
           };
           # TODO: Change to "hyprland" after dendritic refactor
           defaultSession = "hyprland-uwsm";
-        };
-      };
-
-      nix = {
-        settings = {
-          # TODO: Make common
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
         };
       };
 

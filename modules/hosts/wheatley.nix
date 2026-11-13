@@ -17,6 +17,8 @@ in
     { lib, ... }:
     {
       imports = [
+        config.flake.modules.nixos.base
+
         inputs.hardware.nixosModules.common-cpu-intel
         inputs.hardware.nixosModules.common-pc-ssd
         inputs.disko.nixosModules.disko
@@ -66,16 +68,6 @@ in
 
         defaultGateway = "192.168.0.1";
         nameservers = [ "192.168.0.1" ];
-      };
-
-      nix = {
-        settings = {
-          # TODO: Make common
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
-        };
       };
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

@@ -102,6 +102,7 @@ in
       # TODO: Add to feature
       programs.hyprland = {
         enable = true;
+        # TODO: Remove after dendritic refactor
         withUWSM = true;
         xwayland.enable = true;
       };

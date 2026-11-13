@@ -53,7 +53,7 @@
       };
 
       # Grandparents
-      "Aussie Broadband 8674" = {
+      "Aussie Broadband 5765" = {
         pskRaw = "ext:grandparents";
       };
     };

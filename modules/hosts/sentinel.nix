@@ -75,8 +75,7 @@ in
           sddm = {
             enable = true;
           };
-          # TODO: Change to "hyprland" after dendritic refactor
-          defaultSession = "hyprland-uwsm";
+          defaultSession = "hyprland";
         };
 
         # TODO: See if i can remove
@@ -96,11 +95,6 @@ in
       };
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-      programs.hyprland = {
-        # TODO: Remove after dendritic refactor
-        withUWSM = true;
-      };
 
       audio-devices = {
         nicknames = [

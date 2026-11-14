@@ -1,0 +1,27 @@
+{
+  flake.modules.nixos.tailscale =
+    { config, ... }:
+    {
+      sops.secrets.tailscale-key = {
+        sopsFile = ../hosts/common/secrets.yaml;
+        neededForUsers = true;
+      };
+
+      services.tailscale = {
+        enable = true;
+        #useRoutingFeatures = lib.mkDefault "client";
+        authKeyFile = config.sops.secrets.tailscale-key.path;
+      };
+
+      # Seems to be required to fix DNS issues
+      services.resolved.enable = true;
+
+      # TODO: Define "/persist" somewhere else
+      preservation.preserveAt."/persist".directories = [
+        "/var/lib/tailscale"
+
+        # Cache
+        "/var/cache/tailscale"
+      ];
+    };
+}

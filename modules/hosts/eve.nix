@@ -70,17 +70,11 @@ in
             # TODO: Remove after dendritic refactor
             wayland.enable = true;
           };
-          # TODO: Change to "hyprland" after dendritic refactor
-          defaultSession = "hyprland-uwsm";
+          defaultSession = "hyprland";
         };
       };
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-      programs.hyprland = {
-        # TODO: Remove after dendritic refactor
-        withUWSM = true;
-      };
 
       # TODO: Add audio devices
 
